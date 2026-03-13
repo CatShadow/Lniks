@@ -22,12 +22,16 @@ function favicon(url){
 function renderCatalogue(){
 	const container=document.getElementById("themes")
 	if(!container) return
-	container.innerHTML=""
+	container.className="row"
 	data.themes.forEach(theme=>{
-		const block=document.createElement("div")
-		block.className="mb-3"
-		const title=document.createElement("div")
-		title.className="theme-title h4"
+		const col=document.createElement("div")
+		col.className="col-lg-4 col-md-6 col-12 mb-4"
+		const card=document.createElement("div")
+		card.className="card shadow-sm"
+		const body=document.createElement("div")
+		body.className="card-body"
+		const title=document.createElement("h5")
+		title.className="card-title theme-title"
 		title.textContent=theme.name
 		const list=document.createElement("div")
 		theme.links.forEach(link=>{
@@ -35,11 +39,7 @@ function renderCatalogue(){
 			el.className="link"
 			el.innerHTML=`
 			<img class="favicon" src="${favicon(link.url)}">
-			<a
-			href="${link.url}"
-			target="_blank"
-			title="${link.description}"
-			>
+			<a href="${link.url}" target="_blank" title="${link.description}">
 			${link.name}
 			</a>
 			`
@@ -48,9 +48,11 @@ function renderCatalogue(){
 		title.onclick=()=>{
 			list.classList.toggle("d-none")
 		}
-		block.appendChild(title)
-		block.appendChild(list)
-		container.appendChild(block)
+		body.appendChild(title)
+		body.appendChild(list)
+		card.appendChild(body)
+		col.appendChild(card)
+		container.appendChild(col)
 	})
 	initSearch()
 
@@ -167,4 +169,5 @@ if(save){
 }
 
 loadLinks()
+
 
