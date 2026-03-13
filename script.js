@@ -139,7 +139,7 @@ if(form){
 }
 
 async function saveToGitHub(){
-	const repo="YOUR_USERNAME/link-catalogue"
+	const repo="CatShadow/Lniks"
 	const token=prompt("GitHub token")
 	const url=`https://api.github.com/repos/${repo}/contents/links.json`
 	const get=await fetch(url)
@@ -167,3 +167,4 @@ if(save){
 }
 
 loadLinks()
+
