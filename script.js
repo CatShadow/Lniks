@@ -21,7 +21,7 @@ function favicon(url){
 
 function renderCatalogue(){
 	const container=document.getElementById("themes")
-	if(!container) return
+	if(!container) return 
 	container.className="row"
 	data.themes.forEach(theme=>{
 		const col=document.createElement("div")
@@ -169,5 +169,6 @@ if(save){
 }
 
 loadLinks()
+
 
 
