@@ -14,3 +14,23 @@ height:16px;
 cursor:pointer;
 font-weight:bold;
 }
+
+.card{
+transition:transform 0.15s;
+}
+
+.card:hover{
+transform:translateY(-3px);
+}
+
+.link{
+padding:4px;
+}
+
+.link a{
+text-decoration:none;
+}
+
+.link a:hover{
+text-decoration:underline;
+}
