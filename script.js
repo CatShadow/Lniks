@@ -75,31 +75,40 @@ function renderAdmin(){
 	if(!container) return
 	container.innerHTML=""
 	data.themes.forEach((theme,tIndex)=>{
-		const block=document.createElement("div")
-		block.innerHTML=`<h4>${theme.name}</h4>`
-		const list=document.createElement("ul")
-		list.className="list-group mb-3"
+		const col=document.createElement("div")
+		col.className="col-lg-4 col-md-6 mb-4"
+		const card=document.createElement("div")
+		card.className="card"
+		const body=document.createElement("div")
+		body.className="card-body"
+		body.innerHTML=`<h5>${theme.name}</h5>`
+		const list=document.createElement("div")
+		list.className="list-group"
 		theme.links.forEach((link,lIndex)=>{
-			const li=document.createElement("li")
-			li.className="list-group-item"
-			li.innerHTML=`
-			${link.name}
+			const item=document.createElement("div")
+			item.className="list-group-item"
+			item.innerHTML=`
+			<strong>${link.name}</strong>
+			<br>
+			<small>${link.url}</small>
 			<button
 			class="btn btn-sm btn-danger float-end"
 			onclick="deleteLink(${tIndex},${lIndex})"
 			>
-			x
+			×
 			</button>
 			`
-			list.appendChild(li)
+			item.onclick=()=>editLink(tIndex,lIndex)
+			list.appendChild(item)
 		})
-		block.appendChild(list)
-		container.appendChild(block)
+		body.appendChild(list)
+		card.appendChild(body)
+		col.appendChild(card)
+		container.appendChild(col)
 		new Sortable(list,{
+			group:"links",
 			animation:150,
-			onEnd:()=>{
-				updateOrder(list,tIndex)
-			}
+			onEnd:updateAllOrders
 		})
 	})
 }
@@ -111,6 +120,35 @@ function updateOrder(list,tIndex){
 	})
 }
 
+function updateAllOrders(){
+	const themeBlocks=document.querySelectorAll("#adminThemes .card")
+	themeBlocks.forEach((card,tIndex)=>{
+		const items=card.querySelectorAll(".list-group-item")
+		const newLinks=[]
+		items.forEach(item=>{
+			const name=item.querySelector("strong").innerText
+			const link=data.themes
+			.flatMap(t=>t.links)
+			.find(l=>l.name===name)
+			if(link) newLinks.push(link)
+		})
+		data.themes[tIndex].links=newLinks
+	})
+}
+
+function editLink(t,l){
+	const link=data.themes[t].links[l]
+	const name=prompt("Name",link.name)
+	if(name===null) return
+	const url=prompt("URL",link.url)
+	if(url===null) return
+	const description=prompt("Description",link.description)
+	link.name=name
+	link.url=url
+	link.description=description
+	renderAdmin()
+}
+
 function deleteLink(t,l){
 	data.themes[t].links.splice(l,1)
 	renderAdmin()
@@ -119,7 +157,7 @@ function deleteLink(t,l){
 const form=document.getElementById("addForm")
 
 if(form){
-	form.onsubmit=e=>{
+	form.onsubmit=async e=>{
 		e.preventDefault()
 		
 		const themeName=document.getElementById("theme").value
@@ -133,11 +171,29 @@ if(form){
 			theme={name:themeName,links:[]}
 			data.themes.push(theme)
 		}
-		theme.links.push({name,description,url})
+		const meta=await fetchMetadata(url)
+
+		theme.links.push({
+			name: name || meta.title,
+			description,
+			url
+		})
 		renderAdmin()
 		form.reset()
 	}
 
+}
+
+async function fetchMetadata(url){
+	try{
+		const res=await fetch("https://api.allorigins.win/raw?url="+encodeURIComponent(url))
+		const text=await res.text()
+		const doc=new DOMParser().parseFromString(text,"text/html")
+		const title=doc.querySelector("title")?.innerText || url
+		return {title}
+	}catch{
+		return {title:url}
+	}
 }
 
 async function saveToGitHub(){
