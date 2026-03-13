@@ -1,37 +1,44 @@
 .link {
-display:flex;
-align-items:center;
-gap:8px;
-padding:6px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:6px;
 }
 
 .favicon{
-width:18px;
-height:18px;
+  width:18px;
+  height:18px;
 }
 
 .theme-title{
-cursor:pointer;
-font-weight:bold;
+  cursor:pointer;
+  font-weight:bold;
 }
 
 .card{
-transition:transform 0.15s;
+  transition:transform 0.15s;
 }
 
 .card:hover{
-transform:translateY(-3px);
+  transform:translateY(-3px);
 }
 
 .link{
-padding:4px;
+  padding:4px;
 }
 
 .link a{
-text-decoration:none;
+  text-decoration:none;
 }
 
 .link a:hover{
-text-decoration:underline;
+  text-decoration:underline;
 }
 
+.list-group-item{
+  cursor:grab;
+}
+
+.list-group-item:hover{
+  background:#f8f9fa;
+}
