@@ -1,0 +1,29 @@
+{
+  "themes": [
+    {
+      "name": "Programming",
+      "links": [
+        {
+          "name": "Stack Overflow",
+          "description": "Programming questions and answers",
+          "url": "https://stackoverflow.com"
+        },
+        {
+          "name": "MDN Web Docs",
+          "description": "Web development documentation",
+          "url": "https://developer.mozilla.org"
+        }
+      ]
+    },
+    {
+      "name": "AI",
+      "links": [
+        {
+          "name": "OpenAI",
+          "description": "AI research and APIs",
+          "url": "https://openai.com"
+        }
+      ]
+    }
+  ]
+}
