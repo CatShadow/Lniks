@@ -20,28 +20,6 @@
     {
       "name": "AI",
       "links": []
-    },
-    {
-      "name": "test",
-      "links": [
-        {
-          "name": "test",
-          "description": "test",
-          "url": "test",
-          "id": "bVpwybAvhOdsPqPNtg6mVdu4TAp0oJeIoWW2OovOTmJnGOT9Tgt2YFmZu4HMSAJK"
-        }
-      ]
-    },
-    {
-      "name": "test2",
-      "links": [
-        {
-          "id": "seFbigBw97w860tmNHGP1uPSmFMLqgcDyOot7hzoRHQCWfWeFhOCHKLIWwXNzrEE",
-          "name": "test2",
-          "description": "test",
-          "url": "test"
-        }
-      ]
     }
   ]
 }
