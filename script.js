@@ -15,6 +15,16 @@ async function init() {
     setupSaveButton()
 }
 
+function generateId(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
 /* --------------------------
 LOAD JSON
 -------------------------- */
@@ -22,6 +32,13 @@ async function loadLinks(){
     try{
         const res = await fetch(DATA_URL)
         data = await res.json()
+        data.themes.forEach(theme=>{
+            theme.links.forEach(link=>{
+                if(!link.id){
+                    link.id = generateId(64)
+                }
+            })
+        })
         //console.log("links loaded", data)
     } catch(e) {
         console.error("Failed loading links.json", e)
@@ -135,6 +152,18 @@ function renderAdmin() {
 
         const title = document.createElement("h5")
         title.textContent = theme.name
+        title.style.cursor = "pointer"
+
+        title.onclick = () => {
+            const newName = prompt("Theme name", theme.name)
+
+            if(!newName) return
+
+            theme.name = newName
+
+            renderAdmin()
+            renderCatalogue()
+        }
 
         const list = document.createElement("div")
         list.className = "list-group"
@@ -146,7 +175,7 @@ function renderAdmin() {
 
             item.innerHTML = `
             <div>
-              <strong>${link.name}</strong><br>
+              <strong data-id="${link.id}">${link.name}</strong><br>
               <small>${link.url}</small>
             </div>
             <button class="btn btn-sm btn-danger">×</button>
@@ -183,23 +212,20 @@ function renderAdmin() {
 /* --------------------------
 REORDER FIX
 -------------------------- */
-function updateAllOrders() {
-    const themeBlocks = document.querySelectorAll("#adminThemes .card")
+function updateAllOrders(){
+    const themeCards = document.querySelectorAll("#adminThemes .card")
 
-    themeBlocks.forEach((card, tIndex) => {
+    themeCards.forEach((card,tIndex)=>{
         const items = card.querySelectorAll(".list-group-item")
         const newLinks = []
 
-    items.forEach(item => {
-        const name = item.querySelector("strong").innerText
-        // find original link by name & URL
-        const link = data.themes.flatMap(t => t.links).find(l => l.name === name)
-
-        if (link) newLinks.push(link)
+        items.forEach(item=>{
+            const id = item.querySelector("strong").dataset.id
+            const link = data.themes.flatMap(t=>t.links).find(l=>l.id === id)
+            if(link) newLinks.push(link)
+        })
+        data.themes[tIndex].links = newLinks
     })
-
-    data.themes[tIndex].links = newLinks
-  })
 }
 
 /* --------------------------
@@ -228,9 +254,17 @@ DELETE
 -------------------------- */
 function deleteLink(t,l){
     data.themes[t].links.splice(l,1)
+
+    if(data.themes[t].links.length === 0){
+        data.themes.splice(t,1)
+    }
     renderAdmin()
+    renderCatalogue()
 }
 
+/* --------------------------
+FORM
+-------------------------- */
 function setupForm() {
     const form = document.getElementById("addForm")
     if (!form) return
@@ -256,6 +290,7 @@ function setupForm() {
         }
 
         theme.links.push({
+            id: generateId(64),
             name: name || url,
             description,
             url
