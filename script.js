@@ -22,7 +22,7 @@ async function loadLinks(){
     try{
         const res = await fetch(DATA_URL)
         data = await res.json()
-        console.log("links loaded", data)
+        //console.log("links loaded", data)
     } catch(e) {
         console.error("Failed loading links.json", e)
     }
@@ -116,7 +116,7 @@ ADMIN PAGE
 function renderAdmin() {
 
     const container = document.getElementById("adminThemes")
-    console.log("renderAdmin", container, data)
+    //console.log("renderAdmin", container, data)
     if (!container || !data) return
 
     container.innerHTML = ""
