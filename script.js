@@ -239,7 +239,7 @@ function setupForm() {
         e.preventDefault()
 
         const themeName = document.getElementById("theme").value.trim()
-        const name = document.getElementById("name").value.trim()
+        const name = document.getElementById("name1").value.trim()
         const description = document.getElementById("description").value.trim()
         const url = document.getElementById("url").value.trim()
 
