@@ -151,7 +151,12 @@ function renderAdmin() {
         body.className = "card-body"
 
         const title = document.createElement("h5")
-        title.textContent = theme.name
+        title.innerHTML = `
+        <span class="theme-handle" style="cursor:grab">☰</span>
+        <span class="theme-title">${theme.name}</span>
+        `
+
+        card.dataset.theme = theme.name
         title.style.cursor = "pointer"
 
         title.onclick = () => {
@@ -174,10 +179,13 @@ function renderAdmin() {
             item.className = "list-group-item d-flex justify-content-between align-items-center"
 
             item.innerHTML = `
-            <div>
-              <strong data-id="${link.id}">${link.name}</strong><br>
-              <small>${link.url}</small>
+            <span class="drag-handle me-2" style="cursor:grab">☰</span>
+
+            <div class="flex-grow-1">
+            <strong data-id="${link.id}">${link.name}</strong><br>
+            <small>${link.url}</small>
             </div>
+
             <button class="btn btn-sm btn-danger">×</button>
             `
 
@@ -200,13 +208,51 @@ function renderAdmin() {
         container.appendChild(col)
 
         if (typeof Sortable !== "undefined") {
-            new Sortable(list, {
-                group: "links",
-                animation: 150,
-                onEnd: updateAllOrders
+            new Sortable(list,{
+              group:"links",
+              animation:150,
+              handle:".drag-handle",
+              onEnd:updateAllOrders
             })
         }
     })
+    populateThemeDropdown()
+    initThemeDrag()
+}
+
+/* --------------------------
+DROPDOWN THEME
+-------------------------- */
+function populateThemeDropdown(){
+  const select = document.getElementById("theme")
+  if(!select) return
+
+  select.innerHTML=""
+
+  data.themes.forEach(t=>{
+
+    const opt=document.createElement("option")
+    opt.value=t.name
+    opt.textContent=t.name
+
+    select.appendChild(opt)
+  })
+
+  const add=document.createElement("option")
+  add.value="__new__"
+  add.textContent="+ Add new theme"
+
+  select.appendChild(add)
+
+  select.onchange=()=>{
+    const newField=document.getElementById("newTheme")
+
+    if(select.value==="__new__"){
+      newField.classList.remove("d-none")
+    }else{
+      newField.classList.add("d-none")
+    }
+  }
 }
 
 /* --------------------------
@@ -250,6 +296,30 @@ function editLink(t, l) {
 }
 
 /* --------------------------
+THEME DRAG
+-------------------------- */
+function initThemeDrag(){
+  const container = document.getElementById("adminThemes")
+  if(!container) return
+
+  new Sortable(container,{
+    animation:150,
+    handle:".theme-handle",
+    onEnd(){
+      const cards = container.querySelectorAll(".card")
+      const newThemes = []
+
+      cards.forEach(card=>{
+        const name = card.dataset.theme
+        const theme = data.themes.find(t=>t.name===name)
+        if(theme) newThemes.push(theme)
+      })
+      data.themes = newThemes
+    }
+  })
+}
+
+/* --------------------------
 DELETE
 -------------------------- */
 function deleteLink(t,l){
@@ -272,7 +342,12 @@ function setupForm() {
     form.onsubmit = e => {
         e.preventDefault()
 
-        const themeName = document.getElementById("theme").value.trim()
+        let themeName = document.getElementById("theme").value
+        const newThemeField = document.getElementById("newTheme")
+
+        if(themeName==="__new__"){
+          themeName = newThemeField.value.trim()
+        }
         const name = document.getElementById("name1").value.trim()
         const description = document.getElementById("description").value.trim()
         const url = document.getElementById("url").value.trim()
