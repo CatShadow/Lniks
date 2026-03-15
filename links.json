@@ -60,6 +60,18 @@
           "name": "CadXStudio",
           "description": "Generate models from text",
           "url": "https://cadxstudio.in"
+        },
+        {
+          "id": "a3OVHhyDCkZbzp5IT884vLTeHhMA1peMadKndxEQ8xRFSLItT7xliKHlWhbBmUXM",
+          "name": "Figma",
+          "description": "Craete any interactive product",
+          "url": "https://figma.com"
+        },
+        {
+          "id": "3gYoddKOsMD2BR3Q57ECUMeoNOYlPI0qjoelsRDRIBpKnHJCxsGKeKLLM3Zaal5x",
+          "name": "Pacdora",
+          "description": "Create packaging mockups",
+          "url": "https://pacdora.com"
         }
       ]
     },
@@ -99,6 +111,12 @@
           "name": "Perler Beads",
           "description": "Convert images into perler beads patterns",
           "url": "https://perlerbeads.net"
+        },
+        {
+          "id": "lfWExKOHJKIfsUvYeXwLi7qAowC1poflLN6yqcTCUiL6QjeBoJIHCOKBnHGdd76Y",
+          "name": "PaperMe",
+          "description": "Printable paper worksheets",
+          "url": "https://paperme.pixzens.com/en"
         }
       ]
     },
@@ -121,6 +139,12 @@
           "name": "SuperCook",
           "description": "Prepare meals from what you have in your pantry",
           "url": "https://supercook.com"
+        },
+        {
+          "id": "a1arsAXyItWX2J0qMcEAzarEPC1Ap5ZWamvrZoLwW7ADWU9NgaV56ChyYDlJCmj9",
+          "name": "My Fridge Food",
+          "description": "Recipes from what's in your fridge",
+          "url": "https://myfridgefood.com"
         }
       ]
     },
@@ -200,6 +224,12 @@
           "name": "Muscle Wiki",
           "description": "Work out by muscle group",
           "url": "https://musclewiki.com"
+        },
+        {
+          "id": "Oibu36nPbwu1yzN074Rah48AJl1SZSVUkIv59G3N0AMA8miHZF11OBi82LL5JTB6",
+          "name": "Human Biodigital",
+          "description": "Explore the human body in 3D",
+          "url": "https://human.biodigital.com"
         }
       ]
     },
@@ -211,6 +241,28 @@
           "name": "Myinstants",
           "description": "Find sound effects",
           "url": "https://www.myinstants.com/en/index/us/"
+        }
+      ]
+    },
+    {
+      "name": "Aviation",
+      "links": [
+        {
+          "id": "secmNIHE6lVO0gQfCoqhgom1UnFZIIHaxQoWgeCu1lCxVvjZHvxV6hNMAqonsH2c",
+          "name": "GEO FS",
+          "description": "Fly all kinds of airplane",
+          "url": "https://geo-fs.com"
+        }
+      ]
+    },
+    {
+      "name": "Skills",
+      "links": [
+        {
+          "id": "uCc9QiXl7NBpvF8cukMlPTWnvRk3QsXTgvIy9MnPzD68Ymbinko43anTstJcQ0Ub",
+          "name": "Typing Club",
+          "description": "Learn dactylography",
+          "url": "https://typingclub.com"
         }
       ]
     }
