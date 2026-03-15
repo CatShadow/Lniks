@@ -20,6 +20,12 @@
           "name": "Bongo Cat",
           "description": "Get a Bongo Cat on GitHub",
           "url": "https://github.com/ayangweb/BongoCat"
+        },
+        {
+          "id": "MI6v2RMxpbYnvPR49cU4TjDm8l6ZKXZbBeOSIAM4aIVAC9gszqN2Llo85iU8VSHq",
+          "name": "White Screen",
+          "description": "Fake updating OS",
+          "url": "https://whitescreen.online"
         }
       ]
     },
@@ -37,6 +43,12 @@
           "name": "Auto Catalog Archive",
           "description": "Brochures for every car in the world",
           "url": "https://autocatalogarchive.com"
+        },
+        {
+          "id": "MnaE9I9XYPMi20MYr6RjXX4l0a8Zm8ZystW98Qy0zyGBbYjYOGYVujPPT3vZshuv",
+          "name": "Car Care Kiosk",
+          "description": "Repair your car",
+          "url": "https://carcarekiosk.com"
         }
       ]
     },
@@ -64,7 +76,20 @@
     },
     {
       "name": "Photography",
-      "links": []
+      "links": [
+        {
+          "id": "EQocf9vg9aO2RRJ41BFZsiRsrOWIxamQjgJUO3I70XDNY8gwuedpXtDAOssxz0ku",
+          "name": "Photo Gradient",
+          "description": "Create a gradient from an image",
+          "url": "https://photogradient.com"
+        },
+        {
+          "id": "xJvI73xv4SKj5f11UMF2TNejFHRKfnQbdOpAvkNsSGBj4acirvYNmLvrJCeHOK1X",
+          "name": "DOF Simulator",
+          "description": "Understand how camera settings work",
+          "url": "https://dofsimulator.net/en"
+        }
+      ]
     },
     {
       "name": "Crafting",
@@ -130,6 +155,18 @@
           "name": "Tooooools",
           "description": "Digital effects on images",
           "url": "https://www.tooooools.app/"
+        },
+        {
+          "id": "sNNJBXjas4TqRBhH4I7pgDu7gI09PihYMYEHgbllYYpzLCFELce05IBbCG3PItqf",
+          "name": "Unicorn Studio",
+          "description": "Find animation effects",
+          "url": "https://unicorn.studio"
+        },
+        {
+          "id": "dJZLJ7IakkiFF1L5BFPxVrXboPjuyustOhfyqtQ6vSy44aHkWCgrbThkzFyUlS6B",
+          "name": "3Dream",
+          "description": "Design your home in 3D",
+          "url": "https://3dream.net"
         }
       ]
     },
@@ -152,6 +189,28 @@
           "name": "World Monitor",
           "description": "Real time global trends",
           "url": "https://worldmonitor.app"
+        }
+      ]
+    },
+    {
+      "name": "Biology",
+      "links": [
+        {
+          "id": "9wSJ66RfyBX84m4gXLRSKSHgkFkN4oo5R0mkA4EGUR0HR06eeL1qfXhSeb91yjZa",
+          "name": "Muscle Wiki",
+          "description": "Work out by muscle group",
+          "url": "https://musclewiki.com"
+        }
+      ]
+    },
+    {
+      "name": "Sound",
+      "links": [
+        {
+          "id": "0WbfXAFLhHvgPHqbppIsPr0MpZo1YDS3MnePZqNo45F9rK1DCHvzQQNUbw8UDV7h",
+          "name": "Myinstants",
+          "description": "Find sound effects",
+          "url": "https://www.myinstants.com/en/index/us/"
         }
       ]
     }
