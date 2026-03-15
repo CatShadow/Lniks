@@ -418,7 +418,7 @@ function setupForm() {
         }
         const name = document.getElementById("name1").value.trim()
         const description = document.getElementById("description").value.trim()
-        const url = document.getElementById("url").value.trim()
+        let url = document.getElementById("url").value.trim()
 
         if(!url.startsWith("http")) {
             url = "https://" + url
