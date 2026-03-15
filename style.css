@@ -45,12 +45,12 @@
 
 .theme-links{
   overflow:hidden;
-  max-height:0;
-  transition:max-height 0.35s ease;
+  height:0;
+  transition:height 0.28s ease;
 }
 
 .theme-links.open{
-  max-height:9999px;
+  height:auto;
 }
 
 .highlight{
