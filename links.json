@@ -14,6 +14,12 @@
           "description": "Programming questions and answers",
           "url": "https://stackoverflow.com",
           "id": "1SWhZJ3PccdG1JKUTVLCd2JYzDqWrn2RUiQkihPtMHaKzA9XgDvrRjLoSiGvZ0Oit"
+        },
+        {
+          "id": "6hfY2lOClJ7okMpVjgOBhNE6Eqvyxl2nv5WxGS8RCsutvojnC07qkhkE5KjSZBnm",
+          "name": "Bongo Cat",
+          "description": "Get a Bongo Cat on GitHub",
+          "url": "https://github.com/ayangweb/BongoCat"
         }
       ]
     },
@@ -25,6 +31,12 @@
           "name": "StartMyCar",
           "description": "Fix your car problems",
           "url": "https://startmycar.com"
+        },
+        {
+          "id": "5Ibf2qiL3IZiri6YcltiSBOrt8bv4Di2KA44uXg6cPDRmrKTQ2724sNtc3KqvOZo",
+          "name": "Auto Catalog Archive",
+          "description": "Brochures for every car in the world",
+          "url": "https://autocatalogarchive.com"
         }
       ]
     },
@@ -52,14 +64,7 @@
     },
     {
       "name": "Photography",
-      "links": [
-        {
-          "id": "nxoVAFlSrHAI6tFozjaXNCDkkXacQ9mjTeZ2Eju0iTWXjDUALDgXPA93YIs4T1Kj",
-          "name": "Photo Gradient",
-          "description": "Make a gradient from a picture",
-          "url": "https://photogradient.com"
-        }
-      ]
+      "links": []
     },
     {
       "name": "Crafting",
@@ -113,6 +118,18 @@
           "name": "Arcadium 3D",
           "description": "Design your home in 3D",
           "url": "https://arcaduim3d.com"
+        },
+        {
+          "id": "IFhEYn5vjLZ2iB9wKEoHVgQDBCWhE8zfcPBDHmm8fQyewGD7hBg6yMA8pZLbf2rP",
+          "name": "Settei Dreams",
+          "description": "Anime model sheets",
+          "url": "https://setteidreams.net"
+        },
+        {
+          "id": "R4jp801oehHAPnu8qjB5FRdxrvortEvoYUeEtBzJuTJ7ua26UxpKDugRG5Zep0gw",
+          "name": "Tooooools",
+          "description": "Digital effects on images",
+          "url": "https://www.tooooools.app/"
         }
       ]
     },
@@ -124,6 +141,17 @@
           "name": "Animagraffs",
           "description": "How does it work?",
           "url": "https://animagraffs.com"
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "links": [
+        {
+          "id": "LGT8TnqUlIi6JMxn7HtAyEyQ0cNmxZ4ZssoTFm8U55ZGzOAdnP005IceebCwVSuW",
+          "name": "World Monitor",
+          "description": "Real time global trends",
+          "url": "https://worldmonitor.app"
         }
       ]
     }
