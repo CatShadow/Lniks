@@ -59,31 +59,30 @@ function favicon(url){
     }
 }
 
-function toggleSection(list, force=null){
+function toggleSection(list, force = null) {
     const isOpen = list.classList.contains("open")
     const shouldOpen = force !== null ? force : !isOpen
 
-    if(shouldOpen){
-
+    if (shouldOpen) {
         list.classList.add("open")
 
-        const height = list.scrollHeight + "px"
-        list.style.height = height
+        const height = list.scrollHeight
+        list.style.height = height + "px"
 
-        setTimeout(()=>{
+        setTimeout(() => {
             list.style.height = "auto"
-        },280)
+        }, 280)
+    } else {
+        const height = list.scrollHeight
+        list.style.height = height + "px"
 
-    }else{
-
-        const height = list.scrollHeight + "px"
-        list.style.height = height
-
-        requestAnimationFrame(()=>{
+        requestAnimationFrame(() => {
             list.style.height = "0px"
         })
 
-        list.classList.remove("open")
+        setTimeout(() => {
+            list.classList.remove("open")
+        }, 280)
     }
 }
 
@@ -114,6 +113,7 @@ function renderCatalogue(){
         const list = document.createElement("div")
         list.className = "theme-links"
         //list.className = "theme-links open"
+        list.style.height = "0px"
         
         theme.links.forEach((link,i)=>{
             const el = document.createElement("div")
@@ -240,6 +240,7 @@ function renderAdmin() {
         const list = document.createElement("div")
         list.className = "list-group theme-links"
         //list.className = "list-group theme-links open"
+        list.style.height = "0px"
 
         theme.links.forEach((link, lIndex) => {
             const item = document.createElement("div")
@@ -516,7 +517,7 @@ function toggleAll(){
     document.querySelectorAll(".theme-links").forEach(list=>{
         toggleSection(list, expanded)
     })
-    
+
     const text = expanded ? "Collapse All" : "Expand All"
 
     if(btnIndex) btnIndex.textContent = text
