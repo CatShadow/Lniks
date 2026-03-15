@@ -126,7 +126,13 @@ let expanded = false
         })
         
         title.onclick=()=>{
-            list.classList.toggle("open")
+            title.onclick = () => {
+                if(list.classList.contains("open")){
+                    list.classList.remove("open")
+                }else{
+                    list.classList.add("open")
+                }
+            }
         }
 
         body.appendChild(title)
@@ -149,13 +155,20 @@ function initSearch(){
     input.oninput = () => {
         const q = input.value.toLowerCase()
         document.querySelectorAll(".link").forEach(link=>{
-            const title = link.dataset.name
-            const desc = link.dataset.desc
-            const url = link.dataset.url
+            const name = link.dataset.name || ""
+            const desc = link.dataset.desc || ""
+            const url = link.dataset.url || ""
 
-            const text = (title + " " + desc + " " + url).toLowerCase()
+            const combined = (name + " " + desc + " " + url).toLowerCase()
+            const anchor = link.querySelector("a")
 
-            link.style.display = text.includes(q) ? "flex" : "none"
+            if(combined.includes(q)){
+                link.style.display="flex"
+                anchor.innerHTML = highlightText(name,q)
+            }else{
+                link.style.display="none"
+            }
+
         })
     }
 }
@@ -466,20 +479,34 @@ async function saveToGitHub(){
 EXPAND ALL
 -------------------------- */
 function setupExpandAll(){
-    const btn = document.getElementById("toggleAll") || document.getElementById("toggleAllAdmin")
-    if(!btn) return
-    let expanded=false
-    btn.onclick=()=>{
-        expanded=!expanded
+    const btnIndex = document.getElementById("toggleAll")
+    const btnAdmin = document.getElementById("toggleAllAdmin")
 
-        document.querySelectorAll(".theme-links")
-        .forEach(el=>{
+    const btn = btnIndex || btnAdmin
+    if(!btn) return
+    let expanded = false
+
+    btn.onclick = ()=>{
+        expanded = !expanded
+
+        document.querySelectorAll(".theme-links").forEach(list=>{
             if(expanded){
-                el.classList.add("open")
+                list.classList.add("open")
             }else{
-                el.classList.remove("open")
+                list.classList.remove("open")
             }
         })
         btn.textContent = expanded ? "Collapse All" : "Expand All"
     }
+}
+
+/* --------------------------
+HIGHLIGHT
+-------------------------- */
+function highlightText(text,query){
+    if(!query) return text
+
+    const regex = new RegExp(`(${query})`,"gi")
+
+    return text.replace(regex,'<span class="highlight">$1</span>')
 }
