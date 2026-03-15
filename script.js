@@ -7,7 +7,7 @@ let expanded = false
 document.addEventListener("DOMContentLoaded", () => {
     init()
 })
-//test
+
 async function init() {
     await loadLinks()
     renderCatalogue()
@@ -59,7 +59,7 @@ function favicon(url){
     }
 }
 
-/*function toggleSection(list, force = null) {
+function toggleSection(list, force = null) {
     const isOpen = list.classList.contains("open")
     const shouldOpen = force !== null ? force : !isOpen
 
@@ -83,17 +83,6 @@ function favicon(url){
         setTimeout(() => {
             list.classList.remove("open")
         }, 280)
-    }
-}*/
-
-function toggleSection(list, force=null){
-    const isOpen = list.classList.contains("open")
-    const shouldOpen = force !== null ? force : !isOpen
-
-    if(shouldOpen){
-        list.classList.add("open")
-    }else{
-        list.classList.remove("open")
     }
 }
 
@@ -124,6 +113,7 @@ function renderCatalogue(){
         const list = document.createElement("div")
         list.className = "theme-links"
         //list.className = "theme-links open"
+        list.style.height = "0px"
         
         theme.links.forEach((link,i)=>{
             const el = document.createElement("div")
@@ -250,6 +240,7 @@ function renderAdmin() {
         const list = document.createElement("div")
         list.className = "list-group theme-links"
         //list.className = "list-group theme-links open"
+        list.style.height = "0px"
 
         theme.links.forEach((link, lIndex) => {
             const item = document.createElement("div")
