@@ -87,7 +87,6 @@ let expanded = false
         list.className = "theme-links"
         
         theme.links.forEach((link,i)=>{
-
             const el = document.createElement("div")
 
             el.className="link"
@@ -106,33 +105,28 @@ let expanded = false
             `
 
             list.appendChild(el)
-            if(theme.links.length > 8){
-                const btn = document.createElement("button")
-
-                btn.className="btn btn-sm btn-outline-secondary mt-2"
-                btn.textContent="Show more..."
-
-                btn.onclick = ()=>{
-                    expanded = !expanded
-                    list.querySelectorAll(".link").forEach((l,i)=>{
-                        if(i>=8){
-                            l.style.display = expanded ? "flex" : "none"
-                        }
-                    })
-                    btn.textContent = expanded ? "Show less" : "Show more..."
-                }
-                body.appendChild(btn)
-            }
         })
-        
-        title.onclick=()=>{
-            title.onclick = () => {
-                if(list.classList.contains("open")){
-                    list.classList.remove("open")
-                }else{
-                    list.classList.add("open")
-                }
+
+        if(theme.links.length > 8){
+            const btn = document.createElement("button")
+            btn.className="btn btn-sm btn-outline-secondary mt-2"
+            btn.textContent="Show more..."
+
+            btn.onclick = ()=>{
+                expanded = !expanded
+
+                list.querySelectorAll(".link").forEach((l,i)=>{
+                    if(i>=8){
+                        l.style.display = expanded ? "flex" : "none"
+                    }
+                })
+                btn.textContent = expanded ? "Show less" : "Show more..."
             }
+            body.appendChild(btn)
+        }
+        
+        title.onclick = ()=>{
+            list.classList.toggle("open")
         }
 
         body.appendChild(title)
@@ -177,7 +171,6 @@ function initSearch(){
 ADMIN PAGE
 -------------------------- */
 function renderAdmin() {
-
     const container = document.getElementById("adminThemes")
     //console.log("renderAdmin", container, data)
     if (!container || !data) return
@@ -205,15 +198,21 @@ function renderAdmin() {
         card.dataset.theme = theme.name
         title.style.cursor = "pointer"
 
-        title.onclick = () => {
-            const newName = prompt("Theme name", theme.name)
+        title.onclick = (e)=>{
+            if(e.target.classList.contains("theme-handle")) return
 
-            if(!newName) return
+            if(e.shiftKey){
+                const newName = prompt("Theme name", theme.name)
 
-            theme.name = newName
+                if(!newName) return
 
-            renderAdmin()
-            renderCatalogue()
+                theme.name = newName
+
+                renderAdmin()
+                renderCatalogue()
+            }else{
+                list.classList.toggle("open")
+            }
         }
 
         const list = document.createElement("div")
@@ -240,7 +239,7 @@ function renderAdmin() {
                 deleteLink(tIndex, lIndex)
             }
 
-            item.onclick = () => editLink(tIndex, lIndex)
+            item.querySelector(".flex-grow-1").onclick = () => editLink(tIndex, lIndex)
 
             list.appendChild(item)
         })
@@ -249,13 +248,10 @@ function renderAdmin() {
         body.appendChild(list)
 
         list.classList.remove("open")
-        title.style.cursor = "pointer"
 
         title.onclick = (e)=>{
             if(e.target.classList.contains("theme-handle")) return
-
-            list.style.display =
-            list.style.display === "none" ? "block" : "none"
+            list.classList.toggle("open")
         }
 
         card.appendChild(body)
@@ -432,10 +428,10 @@ function setupForm() {
 
 async function fetchMetadata(url){
     try{
-        const res=await fetch("https://api.allorigins.win/raw?url="+encodeURIComponent(url))
-        const text=await res.text()
-        const doc=new DOMParser().parseFromString(text,"text/html")
-        const title=doc.querySelector("title")?.innerText || url
+        const res = await fetch("https://api.allorigins.win/raw?url="+encodeURIComponent(url))
+        const text = await res.text()
+        const doc = new DOMParser().parseFromString(text,"text/html")
+        const title = doc.querySelector("title")?.innerText || url
         return {title}
     }catch{
         return {title:url}
@@ -453,17 +449,17 @@ function setupSaveButton() {
 }
 
 async function saveToGitHub(){
-    const repo="CatShadow/Lniks"
-    const token=prompt("GitHub token")
+    const repo = "CatShadow/Lniks"
+    const token = prompt("GitHub token")
     if (!token) return
-    const api =`https://api.github.com/repos/${repo}/contents/links.json`
-    const get=await fetch(api )
-    const file=await get.json()
-    const sha=file.sha
+    const api = `https://api.github.com/repos/${repo}/contents/links.json`
+    const get = await fetch(api )
+    const file = await get.json()
+    const sha = file.sha
     await fetch(api ,{
         method:"PUT",
         headers:{
-            Authorization:"token "+token,
+            Authorization:"token " + token,
             "Content-Type":"application/json"
         },
         body:JSON.stringify({
