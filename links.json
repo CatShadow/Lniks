@@ -36,6 +36,12 @@
           "name": "Napkin",
           "description": "Turn your text into visuals",
           "url": "napkin.ai"
+        },
+        {
+          "id": "vCHekR67ZyrZKlWFHS3f24eL7l7MW60f5Nqs6GNcaMc0CDrP8jX7zFbMogBveUM6",
+          "name": "CadXStudio",
+          "description": "Generate models from text",
+          "url": "cadxstudio.in"
         }
       ]
     },
@@ -47,6 +53,17 @@
           "name": "Skill Lync",
           "description": "Find formulas and examples",
           "url": "resources.skill-lync.com"
+        }
+      ]
+    },
+    {
+      "name": "Photography",
+      "links": [
+        {
+          "id": "nxoVAFlSrHAI6tFozjaXNCDkkXacQ9mjTeZ2Eju0iTWXjDUALDgXPA93YIs4T1Kj",
+          "name": "Photo Gradient",
+          "description": "Make a gradient from a picture",
+          "url": "https://photogradient.com"
         }
       ]
     }
