@@ -7,7 +7,7 @@ let expanded = false
 document.addEventListener("DOMContentLoaded", () => {
     init()
 })
-
+//test
 async function init() {
     await loadLinks()
     renderCatalogue()
