@@ -42,3 +42,19 @@
 .list-group-item:hover{
   background:#f8f9fa;
 }
+
+.theme-links{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.35s ease;
+}
+
+.theme-links.open{
+  max-height:2000px;
+}
+
+.highlight{
+  background:#fff3a0;
+  padding:0 2px;
+  border-radius:3px;
+}
