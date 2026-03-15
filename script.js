@@ -2,7 +2,7 @@ const DATA_URL = "links.json"
 
 let data = null
 let jsonSha = null
-let expanded = false
+let expanded = true
 
 document.addEventListener("DOMContentLoaded", () => {
     init()
