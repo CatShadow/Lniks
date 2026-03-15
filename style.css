@@ -54,6 +54,10 @@
   max-height:none;
 }
 
+.admin{
+  height:auto;
+}
+
 .highlight{
   background:#fff3a0;
   padding:0 2px;
