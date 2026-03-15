@@ -14,54 +14,6 @@
           "description": "Programming questions and answers",
           "url": "https://stackoverflow.com",
           "id": "1SWhZJ3PccdG1JKUTVLCd2JYzDqWrn2RUiQkihPtMHaKzA9XgDvrRjLoSiGvZ0Oit"
-        },
-        {
-          "name": "Stack Overflow",
-          "description": "Programming questions and answers",
-          "url": "https://stackoverflow.com",
-          "id": "2SWhZJ3PccdG1JKUTVLCd2JYzDqWrn2RUiQkihP32a1df321atMHaKzA9XgDvrRjLo"
-        },
-        {
-          "name": "Stack Overflow",
-          "description": "Programming questions and answers",
-          "url": "https://stackoverflow.com",
-          "id": "3SWasdfasdfhZJ3PccdG1JKCd2JYzDqWrn2RUiQkihPtMHaKzqwer87qerA9XgDvrR"
-        },
-        {
-          "name": "Stack Overflow",
-          "description": "Programming questions and answers",
-          "url": "https://stackoverflow.com",
-          "id": "4SWhZJ3PccdG1JKUTVLCd2JYzDqWrn2RUidrhg4stdh25QkihPtMHaKzA9XgDvrRjL"
-        },
-        {
-          "name": "Stack Overflow",
-          "description": "Programming questions and answers",
-          "url": "https://stackoverflow.com",
-          "id": "5SWhZJ3PccdG1JKUTVLCd2JYzDqWrnsftjsdj2RUiQkihPtMHaKzA9XgDvrRjLoSiG"
-        },
-        {
-          "name": "Stack Overflow",
-          "description": "Programming questions and answers",
-          "url": "https://stackoverflow.com",
-          "id": "6SWhZJ3PccdG1JKUT2JYzDqWr65s4ef6541n2RUiQkihPtMHaKzA9XgDvrRjLoSdfh"
-        },
-        {
-          "name": "Stack Overflow",
-          "description": "Programming questions and answers",
-          "url": "https://stackoverflow.com",
-          "id": "7SWhZJ3PccUTVLCd2JYzDqWrn2254drg5sd4rgRUiQkihPtMHaKzA9XgDvrRjLoSiGf"
-        },
-        {
-          "name": "Stack Overflow",
-          "description": "Programming questions and answers",
-          "url": "https://stackoverflow.com",
-          "id": "8SWhZJ3PUTVLCd2JYzDqWrn2RUiQkihPtMHaKzA9XgDvrR36s5f8th46vhm65fg4ujL"
-        },
-        {
-          "name": "Stack Overflow",
-          "description": "Programming questions and answers",
-          "url": "https://stackoverflow.com",
-          "id": "9SWhZJ3PccdG1JKUTVLCd2JYzDQkihPtMHaKzA9XgDvrsfdzj52374dgzj35gfd4hj42"
         }
       ]
     },
@@ -73,18 +25,18 @@
           "name": "StartMyCar",
           "description": "Fix your car problems",
           "url": "https://startmycar.com"
+        },
+        {
+          "id": "HAZya6JUZcwcqYKtQFHSqqP1GhC1zKr01SFBhcVdcEUMItekMqGQL4fHNEParGxX",
+          "name": "Napkin",
+          "description": "Turn your text into visuals",
+          "url": "https://napkin.ai"
         }
       ]
     },
     {
       "name": "AI",
       "links": [
-        {
-          "id": "HAZya6JUZcwcqYKtQFHSqqP1GhC1zKr01SFBhcVdcEUMItekMqGQL4fHNEParGxX",
-          "name": "Napkin",
-          "description": "Turn your text into visuals",
-          "url": "https://napkin.ai"
-        },
         {
           "id": "vCHekR67ZyrZKlWFHS3f24eL7l7MW60f5Nqs6GNcaMc0CDrP8jX7zFbMogBveUM6",
           "name": "CadXStudio",
@@ -112,6 +64,17 @@
           "name": "Photo Gradient",
           "description": "Make a gradient from a picture",
           "url": "https://photogradient.com"
+        }
+      ]
+    },
+    {
+      "name": "Crafting",
+      "links": [
+        {
+          "id": "oGvsYXVEfdjPVOBJ9RvkLAuqiDG1EttjfwdE5BTFmYhzYpY6uLSyUsLhgSCTCtmz",
+          "name": "Perler Beads",
+          "description": "Convert images into perler beads patterns",
+          "url": "https://perlerbeads.net"
         }
       ]
     }
