@@ -420,6 +420,10 @@ function setupForm() {
         const description = document.getElementById("description").value.trim()
         const url = document.getElementById("url").value.trim()
 
+        if(!url.startsWith("http")) {
+            url = "https://" + url
+        }
+
         if (!themeName || !url) {
             alert("Theme and URL required")
             return
