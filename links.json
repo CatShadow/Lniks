@@ -16,6 +16,39 @@
           "id": "SWhZJ3PccdG1JKUTVLCd2JYzDqWrn2RUiQkihPtMHaKzA9XgDvrRjLoSiGvZ0Oit"
         }
       ]
+    },
+    {
+      "name": "Automobile",
+      "links": [
+        {
+          "id": "iKcLjpEEqrX2X9qpYAJOapppdjFDaFcQuAgbNissk1NNm5uqX2keAzt4C2CWzKfW",
+          "name": "StartMyCar",
+          "description": "Fix your car problems",
+          "url": "startmycar.com"
+        }
+      ]
+    },
+    {
+      "name": "AI",
+      "links": [
+        {
+          "id": "HAZya6JUZcwcqYKtQFHSqqP1GhC1zKr01SFBhcVdcEUMItekMqGQL4fHNEParGxX",
+          "name": "Napkin",
+          "description": "Turn your text into visuals",
+          "url": "napkin.ai"
+        }
+      ]
+    },
+    {
+      "name": "Engineering",
+      "links": [
+        {
+          "id": "A3pedCJAd18cXIWwMKv8cufAEoPrcfxIiS8XlsYxdNACd7PqpVjqmeV246sczIMc",
+          "name": "Skill Lync",
+          "description": "Find formulas and examples",
+          "url": "resources.skill-lync.com"
+        }
+      ]
     }
   ]
 }
