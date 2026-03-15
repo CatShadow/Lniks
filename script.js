@@ -13,6 +13,7 @@ async function init() {
     renderAdmin()
     setupForm()
     setupSaveButton()
+    setupExpandAll()
 }
 
 function generateId(length) {
@@ -83,6 +84,7 @@ let expanded = false
         title.textContent = theme.name
         
         const list = document.createElement("div")
+        list.className = "theme-links"
         
         theme.links.forEach((link,i)=>{
 
@@ -124,7 +126,7 @@ let expanded = false
         })
         
         title.onclick=()=>{
-            list.classList.toggle("d-none")
+            list.classList.toggle("open")
         }
 
         body.appendChild(title)
@@ -202,7 +204,7 @@ function renderAdmin() {
         }
 
         const list = document.createElement("div")
-        list.className = "list-group"
+        list.className = "list-group theme-links"
 
         theme.links.forEach((link, lIndex) => {
 
@@ -233,7 +235,7 @@ function renderAdmin() {
         body.appendChild(title)
         body.appendChild(list)
 
-        list.style.display = "none"
+        list.classList.remove("open")
         title.style.cursor = "pointer"
 
         title.onclick = (e)=>{
@@ -436,6 +438,7 @@ function setupSaveButton() {
 
     saveBtn.onclick = saveToGitHub
 }
+
 async function saveToGitHub(){
     const repo="CatShadow/Lniks"
     const token=prompt("GitHub token")
@@ -457,4 +460,26 @@ async function saveToGitHub(){
         })
     })
     alert("Saved to GitHub")
+}
+
+/* --------------------------
+EXPAND ALL
+-------------------------- */
+function setupExpandAll(){
+    const btn = document.getElementById("toggleAll") || document.getElementById("toggleAllAdmin")
+    if(!btn) return
+    let expanded=false
+    btn.onclick=()=>{
+        expanded=!expanded
+
+        document.querySelectorAll(".theme-links")
+        .forEach(el=>{
+            if(expanded){
+                el.classList.add("open")
+            }else{
+                el.classList.remove("open")
+            }
+        })
+        btn.textContent = expanded ? "Collapse All" : "Expand All"
+    }
 }
