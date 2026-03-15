@@ -215,12 +215,6 @@ function renderAdmin() {
         const list = document.createElement("div")
         list.className = "list-group theme-links"
 
-        title.addEventListener("click",(e)=>{
-            if(e.target.classList.contains("theme-handle")) return
-
-            list.classList.toggle("open")
-        })
-
         theme.links.forEach((link, lIndex) => {
 
             const item = document.createElement("div")
@@ -242,7 +236,7 @@ function renderAdmin() {
                 deleteLink(tIndex, lIndex)
             }
 
-            //item.querySelector(".flex-grow-1").onclick = () => editLink(tIndex, lIndex)
+            item.querySelector(".flex-grow-1").onclick = () => editLink(tIndex, lIndex)
 
             list.appendChild(item)
         })
@@ -252,10 +246,16 @@ function renderAdmin() {
 
         list.classList.remove("open")
 
-        /*title.onclick = (e)=>{
+        /*title.addEventListener("click",(e)=>{
+            if(e.target.classList.contains("theme-handle")) return
+
+            list.classList.toggle("open")
+        })*/
+
+        title.onclick = (e)=>{
             if(e.target.classList.contains("theme-handle")) return
             list.classList.toggle("open")
-        }*/
+        }
 
         card.appendChild(body)
         col.appendChild(card)
@@ -477,9 +477,12 @@ async function saveToGitHub(){
 /* --------------------------
 EXPAND ALL
 -------------------------- */
+let btnIndex = null
+let btnAdmin = null
+
 function setupExpandAll(){
-    const btnIndex = document.getElementById("toggleAll")
-    const btnAdmin = document.getElementById("toggleAllAdmin")
+    btnIndex = document.getElementById("toggleAll")
+    btnAdmin = document.getElementById("toggleAllAdmin")
 
     if(btnIndex){
         btnIndex.onclick = toggleAll
@@ -497,8 +500,10 @@ function toggleAll(){
         list.classList.toggle("open", expanded)
     })
 
-    if(btnIndex) btnIndex.textContent = expanded ? "Collapse All" : "Expand All"
-    if(btnAdmin) btnAdmin.textContent = expanded ? "Collapse All" : "Expand All"
+    const text = expanded ? "Collapse All" : "Expand All"
+
+    if(btnIndex) btnIndex.textContent = text
+    if(btnAdmin) btnAdmin.textContent = text
 }
 
 /* --------------------------
