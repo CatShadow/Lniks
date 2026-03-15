@@ -273,7 +273,6 @@ function renderAdmin() {
 
         title.onclick = (e)=>{
             if(e.target.classList.contains("theme-handle")) return
-            toggleSection(list)
         }
 
         card.appendChild(body)
