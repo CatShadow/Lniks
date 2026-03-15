@@ -2,7 +2,8 @@ const DATA_URL = "links.json"
 
 let data = null
 let jsonSha = null
-let expanded = true
+let expanded = false
+let show_more = false
 
 document.addEventListener("DOMContentLoaded", () => {
     init()
@@ -142,14 +143,14 @@ function renderCatalogue(){
             btn.textContent="Show more..."
 
             btn.onclick = ()=>{
-                expanded = !expanded
+                show_more = !show_more
 
                 list.querySelectorAll(".link").forEach((l,i)=>{
                     if(i>=8){
-                        l.style.display = expanded ? "flex" : "none"
+                        l.style.display = show_more ? "flex" : "none"
                     }
                 })
-                btn.textContent = expanded ? "Show less" : "Show more..."
+                btn.textContent = show_more ? "Show less" : "Show more..."
             }
             list.appendChild(btn)
         }
