@@ -43,13 +43,13 @@
   background:#f8f9fa;
 }
 
-.theme-links{
+.theme-links.test{
   overflow:hidden;
   height:0;
   transition:height 0.25s cubic-bezier(.4,0,.2,1);
 }
 
-.theme-links.open{
+.theme-links.open.test{
   height:auto;
 }
 
