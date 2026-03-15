@@ -25,12 +25,6 @@
           "name": "StartMyCar",
           "description": "Fix your car problems",
           "url": "https://startmycar.com"
-        },
-        {
-          "id": "HAZya6JUZcwcqYKtQFHSqqP1GhC1zKr01SFBhcVdcEUMItekMqGQL4fHNEParGxX",
-          "name": "Napkin",
-          "description": "Turn your text into visuals",
-          "url": "https://napkin.ai"
         }
       ]
     },
@@ -75,6 +69,61 @@
           "name": "Perler Beads",
           "description": "Convert images into perler beads patterns",
           "url": "https://perlerbeads.net"
+        }
+      ]
+    },
+    {
+      "name": "Electronics",
+      "links": [
+        {
+          "id": "UwAkeT9wEgXgS6rmRd6wSNiWCGxfeXZLUBpe2yD2y5GFiKW7nG0VUWzZAB8iYXhM",
+          "name": "With Diode",
+          "description": "Simulated electronic workbench",
+          "url": "https://withdiode.com"
+        }
+      ]
+    },
+    {
+      "name": "Cooking",
+      "links": [
+        {
+          "id": "pnHeKBjH9brN5ilFwHk7Lc8WdNcYcRfNnrPHiHSuOTzS2pSV33b2JCyyhNZoHN4j",
+          "name": "SuperCook",
+          "description": "Prepare meals from what you have in your pantry",
+          "url": "https://supercook.com"
+        }
+      ]
+    },
+    {
+      "name": "Gaming",
+      "links": [
+        {
+          "id": "WAYpCSJjM6ChhJ859zlTnFT4SyXm96GAnH4T7RbG5U3fNFJyjPgEPE4ZvWpRXdtQ",
+          "name": "Map Genie",
+          "description": "Every video game maps in one place",
+          "url": "https://mapgenie.io"
+        }
+      ]
+    },
+    {
+      "name": "Design",
+      "links": [
+        {
+          "id": "DGtW1RglfawXgpe2EE2Fr1dpn15FCo2XLaL9NArjQww7XmiBdZb9HrLhfTdqzqmW",
+          "name": "Arcadium 3D",
+          "description": "Design your home in 3D",
+          "url": "https://arcaduim3d.com"
+        }
+      ]
+    },
+    {
+      "name": "Knowledge",
+      "links": [
+        {
+          "id": "D75mhwLlj1YvdvSIHEAzvjYtkNpMKk5ivkHMXfziojSnyijJYMTEHWgccZfJQt2f",
+          "name": "Animagraffs",
+          "description": "How does it work?",
+          "url": "https://animagraffs.com"
         }
       ]
     }
