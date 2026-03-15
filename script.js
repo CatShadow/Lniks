@@ -86,54 +86,42 @@ let expanded = false
         
         theme.links.forEach((link,i)=>{
 
-  const el = document.createElement("div")
+            const el = document.createElement("div")
 
-  el.className="link"
+            el.className="link"
 
-  if(i>=8) el.style.display="none"
+            if(i>=8) el.style.display="none"
 
-  el.dataset.name = link.name || ""
-  el.dataset.desc = link.description || ""
-  el.dataset.url = link.url || ""
+            el.dataset.name = link.name || ""
+            el.dataset.desc = link.description || ""
+            el.dataset.url = link.url || ""
 
-  el.innerHTML = `
-    <img class="favicon" src="${favicon(link.url)}">
-    <a href="${link.url}" target="_blank" title="${link.description}">
-      ${link.name}
-    </a>
-  `
+            el.innerHTML = `
+            <img class="favicon" src="${favicon(link.url)}">
+            <a href="${link.url}" target="_blank" title="${link.description}">
+            ${link.name}
+            </a>
+            `
 
-  list.appendChild(el)
+            list.appendChild(el)
+            if(theme.links.length > 8){
+                const btn = document.createElement("button")
 
-if(theme.links.length > 8){
+                btn.className="btn btn-sm btn-outline-secondary mt-2"
+                btn.textContent="Show more..."
 
-  const btn = document.createElement("button")
-
-  btn.className="btn btn-sm btn-outline-secondary mt-2"
-
-  btn.textContent="Show more..."
-
-  btn.onclick = ()=>{
-
-    expanded = !expanded
-
-    list.querySelectorAll(".link").forEach((l,i)=>{
-
-      if(i>=8){
-        l.style.display = expanded ? "flex" : "none"
-      }
-
-    })
-
-    btn.textContent = expanded ? "Show less" : "Show more..."
-
-  }
-
-  body.appendChild(btn)
-
-}
-
-})
+                btn.onclick = ()=>{
+                    expanded = !expanded
+                    list.querySelectorAll(".link").forEach((l,i)=>{
+                        if(i>=8){
+                            l.style.display = expanded ? "flex" : "none"
+                        }
+                    })
+                    btn.textContent = expanded ? "Show less" : "Show more..."
+                }
+                body.appendChild(btn)
+            }
+        })
         
         title.onclick=()=>{
             list.classList.toggle("d-none")
@@ -157,25 +145,17 @@ function initSearch(){
     if(!input) return
 
     input.oninput = () => {
+        const q = input.value.toLowerCase()
+        document.querySelectorAll(".link").forEach(link=>{
+            const title = link.dataset.name
+            const desc = link.dataset.desc
+            const url = link.dataset.url
 
-  const q = input.value.toLowerCase()
+            const text = (title + " " + desc + " " + url).toLowerCase()
 
-  document.querySelectorAll(".link").forEach(link=>{
-
-    const title = link.dataset.name
-    const desc = link.dataset.desc
-    const url = link.dataset.url
-
-    const text = (title + " " + desc + " " + url).toLowerCase()
-
-    link.style.display =
-      text.includes(q)
-      ? "flex"
-      : "none"
-
-  })
-
-}
+            link.style.display = text.includes(q) ? "flex" : "none"
+        })
+    }
 }
 
 /* --------------------------
@@ -251,22 +231,17 @@ function renderAdmin() {
         })
 
         body.appendChild(title)
-body.appendChild(list)
+        body.appendChild(list)
 
-list.style.display = "none"
+        list.style.display = "none"
+        title.style.cursor = "pointer"
 
-title.style.cursor = "pointer"
+        title.onclick = (e)=>{
+            if(e.target.classList.contains("theme-handle")) return
 
-title.onclick = (e)=>{
-
-  if(e.target.classList.contains("theme-handle")) return
-
-  list.style.display =
-    list.style.display === "none"
-    ? "block"
-    : "none"
-
-}
+            list.style.display =
+            list.style.display === "none" ? "block" : "none"
+        }
 
         card.appendChild(body)
         col.appendChild(card)
@@ -290,35 +265,31 @@ title.onclick = (e)=>{
 DROPDOWN THEME
 -------------------------- */
 function populateThemeDropdown(){
-  const select = document.getElementById("theme")
-  if(!select) return
+    const select = document.getElementById("theme")
+    if(!select) return
 
-  select.innerHTML=""
+    select.innerHTML=""
+    data.themes.forEach(t=>{
+        const opt=document.createElement("option")
+        opt.value=t.name
+        opt.textContent=t.name
 
-  data.themes.forEach(t=>{
+        select.appendChild(opt)
+    })
+    const add=document.createElement("option")
+    add.value="__new__"
+    add.textContent="+ Add new theme"
 
-    const opt=document.createElement("option")
-    opt.value=t.name
-    opt.textContent=t.name
+    select.appendChild(add)
 
-    select.appendChild(opt)
-  })
-
-  const add=document.createElement("option")
-  add.value="__new__"
-  add.textContent="+ Add new theme"
-
-  select.appendChild(add)
-
-  select.onchange=()=>{
+    select.onchange=()=>{
     const newField=document.getElementById("newTheme")
-
-    if(select.value==="__new__"){
-      newField.classList.remove("d-none")
-    }else{
-      newField.classList.add("d-none")
+        if(select.value==="__new__"){
+            newField.classList.remove("d-none")
+        }else{
+            newField.classList.add("d-none")
+        }
     }
-  }
 }
 
 /* --------------------------
@@ -460,10 +431,10 @@ async function fetchMetadata(url){
 SAVE TO GITHUB
 -------------------------- */
 function setupSaveButton() {
-  const saveBtn = document.getElementById("saveBtn")
-  if (!saveBtn) return
+    const saveBtn = document.getElementById("saveBtn")
+    if (!saveBtn) return
 
-  saveBtn.onclick = saveToGitHub
+    saveBtn.onclick = saveToGitHub
 }
 async function saveToGitHub(){
     const repo="CatShadow/Lniks"
