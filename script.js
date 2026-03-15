@@ -239,8 +239,8 @@ function renderAdmin() {
         title.style.cursor = "pointer"
 
         const list = document.createElement("div")
-        list.className = "list-group theme-links"
-        //list.className = "list-group theme-links open"
+        //list.className = "list-group theme-links"
+        list.className = "list-group theme-links open"
         list.style.height = "0px"
 
         theme.links.forEach((link, lIndex) => {
