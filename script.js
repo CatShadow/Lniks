@@ -56,7 +56,7 @@ function favicon(url){
         const domain = new URL(url).hostname
         return `https://www.google.com/s2/favicons?sz=64&domain=${domain}`
     }catch{
-        return ""
+        return "globe.avif"
     }
 }
 
@@ -114,7 +114,6 @@ function renderCatalogue(){
         const list = document.createElement("div")
         //list.className = "theme-links"
         list.className = "theme-links open"
-        list.style.height = "0px"
         
         theme.links.forEach((link,i)=>{
             const el = document.createElement("div")
