@@ -112,8 +112,8 @@ function renderCatalogue(){
         title.textContent = theme.name
         
         const list = document.createElement("div")
-        list.className = "theme-links test"
-        //list.className = "theme-links test open"
+        list.className = "theme-links"
+        //list.className = "theme-links open"
         list.style.height = "0px"
         
         theme.links.forEach((link,i)=>{
@@ -240,7 +240,7 @@ function renderAdmin() {
 
         const list = document.createElement("div")
         //list.className = "list-group theme-links"
-        list.className = "list-group theme-links open"
+        list.className = "list-group theme-links admin open"
         list.style.height = "0px"
 
         theme.links.forEach((link, lIndex) => {
