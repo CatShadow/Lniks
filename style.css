@@ -46,7 +46,7 @@
 .theme-links{
   overflow:hidden;
   height:0;
-  transition:height 0.25s ease;
+  transition:height 0.5s ease;
 }
 
 .theme-links.open{
