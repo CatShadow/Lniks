@@ -59,6 +59,34 @@ function favicon(url){
     }
 }
 
+function toggleSection(list, force=null){
+    const isOpen = list.classList.contains("open")
+    const shouldOpen = force !== null ? force : !isOpen
+
+    if(shouldOpen){
+
+        list.classList.add("open")
+
+        const height = list.scrollHeight + "px"
+        list.style.height = height
+
+        setTimeout(()=>{
+            list.style.height = "auto"
+        },280)
+
+    }else{
+
+        const height = list.scrollHeight + "px"
+        list.style.height = height
+
+        requestAnimationFrame(()=>{
+            list.style.height = "0px"
+        })
+
+        list.classList.remove("open")
+    }
+}
+
 /* --------------------------
 CATALOGUE PAGE
 -------------------------- */
@@ -127,7 +155,7 @@ function renderCatalogue(){
         }
         
         title.onclick = ()=>{
-            list.classList.toggle("open")
+            toggleSection(list)
         }
 
         body.appendChild(title)
@@ -180,7 +208,6 @@ function renderAdmin() {
     container.className = "row"
 
     data.themes.forEach((theme, tIndex) => {
-
         const col = document.createElement("div")
         col.className = "col-lg-4 col-md-6 mb-4"
 
@@ -197,7 +224,6 @@ function renderAdmin() {
         `
 
         title.querySelector(".theme-title").ondblclick = ()=>{
-
             const newName = prompt("Theme name", theme.name)
 
             if(!newName) return
@@ -206,7 +232,6 @@ function renderAdmin() {
 
             renderAdmin()
             renderCatalogue()
-
         }
 
         card.dataset.theme = theme.name
@@ -214,9 +239,9 @@ function renderAdmin() {
 
         const list = document.createElement("div")
         list.className = "list-group theme-links"
+        //list.className = "list-group theme-links open"
 
         theme.links.forEach((link, lIndex) => {
-
             const item = document.createElement("div")
             item.className = "list-group-item d-flex justify-content-between align-items-center"
 
@@ -244,17 +269,9 @@ function renderAdmin() {
         body.appendChild(title)
         body.appendChild(list)
 
-        list.classList.remove("open")
-
-        /*title.addEventListener("click",(e)=>{
-            if(e.target.classList.contains("theme-handle")) return
-
-            list.classList.toggle("open")
-        })*/
-
         title.onclick = (e)=>{
             if(e.target.classList.contains("theme-handle")) return
-            list.classList.toggle("open")
+            toggleSection(list)
         }
 
         card.appendChild(body)
@@ -497,9 +514,9 @@ function toggleAll(){
     expanded = !expanded
 
     document.querySelectorAll(".theme-links").forEach(list=>{
-        list.classList.toggle("open", expanded)
+        toggleSection(list, expanded)
     })
-
+    
     const text = expanded ? "Collapse All" : "Expand All"
 
     if(btnIndex) btnIndex.textContent = text
