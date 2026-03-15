@@ -63,7 +63,6 @@ function favicon(url){
 CATALOGUE PAGE
 -------------------------- */
 function renderCatalogue(){
-let expanded = false
     const container = document.getElementById("themes")
     if(!container || !data) return 
     
@@ -86,6 +85,7 @@ let expanded = false
         
         const list = document.createElement("div")
         list.className = "theme-links"
+        //list.className = "theme-links open"
         
         theme.links.forEach((link,i)=>{
             const el = document.createElement("div")
@@ -123,7 +123,7 @@ let expanded = false
                 })
                 btn.textContent = expanded ? "Show less" : "Show more..."
             }
-            body.appendChild(btn)
+            list.appendChild(btn)
         }
         
         title.onclick = ()=>{
@@ -212,16 +212,14 @@ function renderAdmin() {
         card.dataset.theme = theme.name
         title.style.cursor = "pointer"
 
-        title.addEventListener("click",(e)=>{
+        const list = document.createElement("div")
+        list.className = "list-group theme-links"
 
+        title.addEventListener("click",(e)=>{
             if(e.target.classList.contains("theme-handle")) return
 
             list.classList.toggle("open")
-
         })
-
-        const list = document.createElement("div")
-        list.className = "list-group theme-links"
 
         theme.links.forEach((link, lIndex) => {
 
@@ -241,7 +239,7 @@ function renderAdmin() {
 
             item.querySelector("button").onclick = (e) => {
                 e.stopPropagation()
-                editLink(tIndex, lIndex)
+                deleteLink(tIndex, lIndex)
             }
 
             //item.querySelector(".flex-grow-1").onclick = () => editLink(tIndex, lIndex)
@@ -489,19 +487,6 @@ function setupExpandAll(){
 
     if(btnAdmin){
         btnAdmin.onclick = toggleAll
-    }
-
-    btn.onclick = ()=>{
-        expanded = !expanded
-
-        document.querySelectorAll(".theme-links").forEach(list=>{
-            if(expanded){
-                list.classList.add("open")
-            }else{
-                list.classList.remove("open")
-            }
-        })
-        btn.textContent = expanded ? "Collapse All" : "Expand All"
     }
 }
 
