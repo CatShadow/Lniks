@@ -240,8 +240,7 @@ function renderAdmin() {
 
         const list = document.createElement("div")
         //list.className = "list-group theme-links"
-        list.className = "list-group theme-links admin open"
-        list.style.height = "0px"
+        list.className = "list-group theme-links open"
 
         theme.links.forEach((link, lIndex) => {
             const item = document.createElement("div")
