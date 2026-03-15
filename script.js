@@ -61,6 +61,7 @@ function favicon(url){
 CATALOGUE PAGE
 -------------------------- */
 function renderCatalogue(){
+let expanded = false
     const container = document.getElementById("themes")
     if(!container || !data) return 
     
@@ -83,19 +84,56 @@ function renderCatalogue(){
         
         const list = document.createElement("div")
         
-        theme.links.forEach(link=>{
-            const el = document.createElement("div")
-            el.className="link"
-            
-            el.innerHTML=`
-            <img class="favicon" src="${favicon(link.url)}">
-            <a href="${link.url}" target="_blank" title="${link.description}">
-            ${link.name}
-            </a>
-            `
-            
-            list.appendChild(el)
-        })
+        theme.links.forEach((link,i)=>{
+
+  const el = document.createElement("div")
+
+  el.className="link"
+
+  if(i>=8) el.style.display="none"
+
+  el.dataset.name = link.name || ""
+  el.dataset.desc = link.description || ""
+  el.dataset.url = link.url || ""
+
+  el.innerHTML = `
+    <img class="favicon" src="${favicon(link.url)}">
+    <a href="${link.url}" target="_blank" title="${link.description}">
+      ${link.name}
+    </a>
+  `
+
+  list.appendChild(el)
+
+if(theme.links.length > 8){
+
+  const btn = document.createElement("button")
+
+  btn.className="btn btn-sm btn-outline-secondary mt-2"
+
+  btn.textContent="Show more..."
+
+  btn.onclick = ()=>{
+
+    expanded = !expanded
+
+    list.querySelectorAll(".link").forEach((l,i)=>{
+
+      if(i>=8){
+        l.style.display = expanded ? "flex" : "none"
+      }
+
+    })
+
+    btn.textContent = expanded ? "Show less" : "Show more..."
+
+  }
+
+  body.appendChild(btn)
+
+}
+
+})
         
         title.onclick=()=>{
             list.classList.toggle("d-none")
@@ -118,13 +156,26 @@ function initSearch(){
     const input = document.getElementById("search")
     if(!input) return
 
-    input.oninput=()=>{
-        const q = input.value.toLowerCase()
-        document.querySelectorAll(".link").forEach(link=>{
-            const text = link.innerText.toLowerCase()
-            link.style.display = text.includes(q) ? "flex" : "none"
-        })
-    }
+    input.oninput = () => {
+
+  const q = input.value.toLowerCase()
+
+  document.querySelectorAll(".link").forEach(link=>{
+
+    const title = link.dataset.name
+    const desc = link.dataset.desc
+    const url = link.dataset.url
+
+    const text = (title + " " + desc + " " + url).toLowerCase()
+
+    link.style.display =
+      text.includes(q)
+      ? "flex"
+      : "none"
+
+  })
+
+}
 }
 
 /* --------------------------
@@ -200,7 +251,22 @@ function renderAdmin() {
         })
 
         body.appendChild(title)
-        body.appendChild(list)
+body.appendChild(list)
+
+list.style.display = "none"
+
+title.style.cursor = "pointer"
+
+title.onclick = (e)=>{
+
+  if(e.target.classList.contains("theme-handle")) return
+
+  list.style.display =
+    list.style.display === "none"
+    ? "block"
+    : "none"
+
+}
 
         card.appendChild(body)
         col.appendChild(card)
