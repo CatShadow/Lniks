@@ -2,6 +2,7 @@ const DATA_URL = "links.json"
 
 let data = null
 let jsonSha = null
+let expanded = false
 
 document.addEventListener("DOMContentLoaded", () => {
     init()
@@ -195,25 +196,29 @@ function renderAdmin() {
         <span class="theme-title">${theme.name}</span>
         `
 
+        title.querySelector(".theme-title").ondblclick = ()=>{
+
+            const newName = prompt("Theme name", theme.name)
+
+            if(!newName) return
+
+            theme.name = newName
+
+            renderAdmin()
+            renderCatalogue()
+
+        }
+
         card.dataset.theme = theme.name
         title.style.cursor = "pointer"
 
-        title.onclick = (e)=>{
+        title.addEventListener("click",(e)=>{
+
             if(e.target.classList.contains("theme-handle")) return
 
-            if(e.shiftKey){
-                const newName = prompt("Theme name", theme.name)
+            list.classList.toggle("open")
 
-                if(!newName) return
-
-                theme.name = newName
-
-                renderAdmin()
-                renderCatalogue()
-            }else{
-                list.classList.toggle("open")
-            }
-        }
+        })
 
         const list = document.createElement("div")
         list.className = "list-group theme-links"
@@ -236,10 +241,10 @@ function renderAdmin() {
 
             item.querySelector("button").onclick = (e) => {
                 e.stopPropagation()
-                deleteLink(tIndex, lIndex)
+                editLink(tIndex, lIndex)
             }
 
-            item.querySelector(".flex-grow-1").onclick = () => editLink(tIndex, lIndex)
+            //item.querySelector(".flex-grow-1").onclick = () => editLink(tIndex, lIndex)
 
             list.appendChild(item)
         })
@@ -249,10 +254,10 @@ function renderAdmin() {
 
         list.classList.remove("open")
 
-        title.onclick = (e)=>{
+        /*title.onclick = (e)=>{
             if(e.target.classList.contains("theme-handle")) return
             list.classList.toggle("open")
-        }
+        }*/
 
         card.appendChild(body)
         col.appendChild(card)
@@ -478,9 +483,13 @@ function setupExpandAll(){
     const btnIndex = document.getElementById("toggleAll")
     const btnAdmin = document.getElementById("toggleAllAdmin")
 
-    const btn = btnIndex || btnAdmin
-    if(!btn) return
-    let expanded = false
+    if(btnIndex){
+        btnIndex.onclick = toggleAll
+    }
+
+    if(btnAdmin){
+        btnAdmin.onclick = toggleAll
+    }
 
     btn.onclick = ()=>{
         expanded = !expanded
@@ -494,6 +503,17 @@ function setupExpandAll(){
         })
         btn.textContent = expanded ? "Collapse All" : "Expand All"
     }
+}
+
+function toggleAll(){
+    expanded = !expanded
+
+    document.querySelectorAll(".theme-links").forEach(list=>{
+        list.classList.toggle("open", expanded)
+    })
+
+    if(btnIndex) btnIndex.textContent = expanded ? "Collapse All" : "Expand All"
+    if(btnAdmin) btnAdmin.textContent = expanded ? "Collapse All" : "Expand All"
 }
 
 /* --------------------------
