@@ -43,15 +43,7 @@
   background:#f8f9fa;
 }
 
-.theme-links{
-  overflow:hidden;
-  height:0;
-  transition:height 0.28s ease;
-}
 
-.theme-links.open{
-  height:auto;
-}
 
 .highlight{
   background:#fff3a0;
