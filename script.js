@@ -300,7 +300,9 @@ function populateThemeDropdown(){
     if(!select) return
 
     select.innerHTML=""
-    data.themes.forEach(t=>{
+    [...data.themes]
+    .sort((a,b)=>a.name.localeCompare(b.name, undefined, {sensitivity:'base'}))
+    .forEach(t=>{
         const opt=document.createElement("option")
         opt.value=t.name
         opt.textContent=t.name
