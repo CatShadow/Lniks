@@ -2,7 +2,7 @@ const DATA_URL = "links.json"
 
 let data = null
 let jsonSha = null
-let expanded = false
+let expanded = true
 let show_more = false
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -112,8 +112,8 @@ function renderCatalogue(){
         title.textContent = theme.name
         
         const list = document.createElement("div")
-        list.className = "theme-links"
-        //list.className = "theme-links open"
+        //list.className = "theme-links"
+        list.className = "theme-links open"
         list.style.height = "0px"
         
         theme.links.forEach((link,i)=>{
@@ -300,7 +300,8 @@ function populateThemeDropdown(){
     if(!select) return
 
     select.innerHTML=""
-    [...data.themes]
+    data.themes
+    .slice()
     .sort((a,b)=>a.name.localeCompare(b.name, undefined, {sensitivity:'base'}))
     .forEach(t=>{
         const opt=document.createElement("option")
