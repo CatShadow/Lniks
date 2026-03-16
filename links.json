@@ -26,6 +26,18 @@
           "name": "White Screen",
           "description": "Fake updating OS",
           "url": "https://whitescreen.online"
+        },
+        {
+          "id": "5faV3KmZGlrtqhB7C6McYL8vcuDbT4wYDcLOfMGUqXwkEdEwIXZQ8vF5iuplFKXh",
+          "name": "Exercism",
+          "description": "Learn to code and programming skills",
+          "url": "https://exercism.org"
+        },
+        {
+          "id": "BUVLmITL6AOKv7y8YbxfuT4AZq8bJmaXwkbtrpZP31JeF26SzObMLwht1dBtfb6m",
+          "name": "Coddy",
+          "description": "Learn programming and coding skills",
+          "url": "https://coddy.tech"
         }
       ]
     },
@@ -72,6 +84,24 @@
           "name": "Pacdora",
           "description": "Create packaging mockups",
           "url": "https://pacdora.com"
+        },
+        {
+          "id": "SmbRbkw0EplahW6G2OW8zoJlroiEtbJr543EPTxsdHTUUER8aAyZN3vpq9xwDjpG",
+          "name": "Faces.app",
+          "description": "Create interactive presentations",
+          "url": "https://faces.app"
+        },
+        {
+          "id": "erf7cbQBlyzUMwp4pxWXXdjfJzFrXzaZl8X3RrjJVSlGu10tI6YzsCMdfLJgG3gs",
+          "name": "Blink",
+          "description": "Create apps and websites",
+          "url": "https://blink.new"
+        },
+        {
+          "id": "RrKGIb7zHsijsyMJ7C2JE2RnHMdRut3eZ7ZmO6tdjPjOSQ7EkN9BoUEXNncYLTI4",
+          "name": "Pixel Motion",
+          "description": "Generate motion from an image",
+          "url": "https://pixelmotion.art"
         }
       ]
     },
@@ -100,6 +130,18 @@
           "name": "DOF Simulator",
           "description": "Understand how camera settings work",
           "url": "https://dofsimulator.net/en"
+        },
+        {
+          "id": "cdTT1dsbkfyEbOjbLehI09Fxn2H2OpLleZWqil7Ld4SNwepJIDaQG2OP6OMT17gD",
+          "name": "Depth of field",
+          "description": "Understand camera settings",
+          "url": "https://jherr.github.io/depth-of-field"
+        },
+        {
+          "id": "WaqIYuLN2ZoCxWF9lzxqlrFa7YNQWCDbGfrvxOqlMEd9l0uMJxlsjyRfAbE6OQbD",
+          "name": "Nikon Small World",
+          "description": "Winning macrophotography pictures",
+          "url": "https://nikonsmallworld.com"
         }
       ]
     },
@@ -117,6 +159,12 @@
           "name": "PaperMe",
           "description": "Printable paper worksheets",
           "url": "https://paperme.pixzens.com/en"
+        },
+        {
+          "id": "v1UOOlytxgDi9FKR5JNnmKXiHei74UaaZPrIBSBeFRPWaSSrMCPgrDUSKn2FXZ0y",
+          "name": "Hero Forge",
+          "description": "Customize 3D models for your character",
+          "url": "https://heroforge.com"
         }
       ]
     },
@@ -128,6 +176,12 @@
           "name": "With Diode",
           "description": "Simulated electronic workbench",
           "url": "https://withdiode.com"
+        },
+        {
+          "id": "BmIQGOtATOHyL3BfKpmEP6cjYnm70cVKUTxLV7H8MEi6PCHrCm4iDaGDZoHOXYhY",
+          "name": "IFIXIT",
+          "description": "Guides to fix electronics",
+          "url": "https://ifixit.com"
         }
       ]
     },
@@ -145,6 +199,12 @@
           "name": "My Fridge Food",
           "description": "Recipes from what's in your fridge",
           "url": "https://myfridgefood.com"
+        },
+        {
+          "id": "HwoBVO7sfiOHm2WYIU1yfcR0FPq4HurIhck2kHTD4PhsOH4diJNP65Xpwg2lEJlj",
+          "name": "Chef GPT",
+          "description": "Generate recipes from what ingredients, tools and time you have",
+          "url": "https://chefgpt.xyz"
         }
       ]
     },
@@ -156,6 +216,12 @@
           "name": "Map Genie",
           "description": "Every video game maps in one place",
           "url": "https://mapgenie.io"
+        },
+        {
+          "id": "TLaZxi1oIXFzAsotFC5DOT6e6MxkocO54aRsFoIijqdVpMBqrIJJRovWmgRyR0sw",
+          "name": "Inkarnate",
+          "description": "Creat customized maps for DnD or roleplay games",
+          "url": "https://inkarnate.com"
         }
       ]
     },
@@ -191,6 +257,48 @@
           "name": "3Dream",
           "description": "Design your home in 3D",
           "url": "https://3dream.net"
+        },
+        {
+          "id": "hu056L8ZXPU1cdKQYf0pLvFJcTR3LOFhH9YumljHYW9bFPXGljY6l5pQFCx3VW7F",
+          "name": "TinyWow",
+          "description": "PDF, image, video, and sound tools",
+          "url": "https://tinywow.com"
+        },
+        {
+          "id": "Zy7EBjNOV5C6g8v2tuk9SVHECVkTKHpGuheK6e3nyAcMiR2DmxIcsqpUAps7SvIN",
+          "name": "Floorplanner",
+          "description": "Design your home in 3D",
+          "url": "https://floorplanner.com"
+        },
+        {
+          "id": "Knq5ZX4TzGOKDZ7vuuN1A8GDChK3qgDa0kaYcJqKC68nQF5NfHvPrPU15cbCDm7r",
+          "name": "OverType",
+          "description": "Try an old fashion typewriter",
+          "url": "https://uniqcode.com/typewriter"
+        },
+        {
+          "id": "g5xSnWMRPcNIVLKmWiSatBinsbeaWGzHSqE83w5q07OPkRjktbdWh17VDylR7N6V",
+          "name": "React Bits",
+          "description": "Find any webpage animation",
+          "url": "https://reactbits.dev"
+        },
+        {
+          "id": "hqdevzSiGOXelQ4Dp9yboAlYq4ygccDxqUAvn6Ku5EQloBFQ92IP9DscnI7OWqpg",
+          "name": "Square Face Icon",
+          "description": "Generate your own vintage profile picture",
+          "url": "https://flashmuseum.org/square-face-icon-generator"
+        },
+        {
+          "id": "zAC7G1pyF9iEyJMVZ7MtdV8aTSB45Fe0lbkVdjHHdIZbqY6hwTuXM6442ryJL7ra",
+          "name": "Shader Gradient",
+          "description": "Create a motion background",
+          "url": "https://shadergradient.co"
+        },
+        {
+          "id": "hPFv50E6Hn36NVSfnviksiwYuwmxHr8m06UBVQWc2KwfQdRVWvvy6sdcZhhvJu3k",
+          "name": "ASCII Art",
+          "description": "Generate ASCII art from an image",
+          "url": "https://asciiart.eu/image-to-ascii"
         }
       ]
     },
@@ -202,6 +310,42 @@
           "name": "Animagraffs",
           "description": "How does it work?",
           "url": "https://animagraffs.com"
+        },
+        {
+          "id": "L7wR4HNjRPkFuzo45sF0mgvSo9XlLIxrOHDRq5FWT5fJNHmosvq50Tpwv49naMbg",
+          "name": "Chemical Equations",
+          "description": "Science",
+          "url": "https://chemequations.com/en"
+        },
+        {
+          "id": "Jj9Lf1hxy7HbOSy6jcGG4zMYrNFPYEgjWbggJDhZZj7N3gPExEm09zDnp0hAWbjB",
+          "name": "Class Central",
+          "description": "Learn from universities and companies",
+          "url": "https://classcentral.com"
+        },
+        {
+          "id": "FShCjRYQoI6sufg4lKF7wHsKJztIntbHS83bg8Nc8juX5SrpAtoAf2lQdN0kuEoA",
+          "name": "Cymath",
+          "description": "Solve any equation, math problems",
+          "url": "https://cymath.com"
+        },
+        {
+          "id": "npM0aTQcKKYoDVfUyz55WB8yLCk97k7NeLkoqIVhmgDX1DwuPqXIWDuLLkLPKJSd",
+          "name": "LingoHut",
+          "description": "Learn a new language",
+          "url": "https://lingohut.com/en"
+        },
+        {
+          "id": "SsiauAgRFlyd6SZBvO9XdO8u1LuoG8E8Q9eN75RC138QsnHoTKPbQ3ldKGAXcsnG",
+          "name": "Chemistry expermients",
+          "description": "Simulate any chemistry experiment",
+          "url": "https://chemistry-en.nobook.com"
+        },
+        {
+          "id": "Rc0nlvOY1CVNRp4JcZzWGCt2l7bW1DX8gkUBDERdaIA5sIqDUeukGkQUSCByQXew",
+          "name": "Language Guide",
+          "description": "Learn a new language",
+          "url": "https://languageguide.org"
         }
       ]
     },
@@ -213,6 +357,12 @@
           "name": "World Monitor",
           "description": "Real time global trends",
           "url": "https://worldmonitor.app"
+        },
+        {
+          "id": "lSE9ehl1IKsFxnKZGNrMbX8MqBbHHhZdJkjdq4KX3qNctXWfSdrSElbE8cSK9kKJ",
+          "name": "Topo export",
+          "description": "Export 2D and 3D maps from any place in the world",
+          "url": "https://topoexport.com"
         }
       ]
     },
@@ -230,6 +380,12 @@
           "name": "Human Biodigital",
           "description": "Explore the human body in 3D",
           "url": "https://human.biodigital.com"
+        },
+        {
+          "id": "KBXDM59HHYhNzzrCIPELBGhyNoXXndNwCb7b1aMEElHrV5LVDzL1ZeefUIJkoab5",
+          "name": "Workout.cool",
+          "description": "Get a workout plan from your equipment and muscle group",
+          "url": "https://workout.cool"
         }
       ]
     },
@@ -241,6 +397,12 @@
           "name": "Myinstants",
           "description": "Find sound effects",
           "url": "https://www.myinstants.com/en/index/us/"
+        },
+        {
+          "id": "Q3LRTwiNmArS300nsltgKQD059JqbBoGYN9jBmGsAPlONe5aSyAMwUbdkhbn22Pp",
+          "name": "SplitMySong",
+          "description": "Split any song into multiple tracks",
+          "url": "https://splitmysong.com"
         }
       ]
     },
@@ -263,6 +425,39 @@
           "name": "Typing Club",
           "description": "Learn dactylography",
           "url": "https://typingclub.com"
+        }
+      ]
+    },
+    {
+      "name": "Travel",
+      "links": [
+        {
+          "id": "O7xaAztynGBAL0KtZJ4OQR51PNNQqbIOHvgOQ9sif8dvQsJiGoXpajFotBOhkckc",
+          "name": "Make My Drive Fun",
+          "description": "Plan a road trip",
+          "url": "https://makemydrivefun.com"
+        }
+      ]
+    },
+    {
+      "name": "Boredom",
+      "links": [
+        {
+          "id": "dSjyrdwDN5CTUYe1kFZxghSqHVxCEPxGYh5k3qJyAOD7yGVxRm8FINYcqsWHoUBj",
+          "name": "Form Follows Function",
+          "description": "Cure boredom with interactive pages",
+          "url": "https://fff.cmiscm.com"
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "links": [
+        {
+          "id": "aKRzj1UR20eEf5wK5Tk5rFfVHt8mUVRzIhUrJDUh5nl0NafeswsZPmjwUH5ioqvB",
+          "name": "Convertio",
+          "description": "Convert any file format",
+          "url": "https://convertio.co"
         }
       ]
     }
