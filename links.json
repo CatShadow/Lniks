@@ -102,17 +102,29 @@
           "name": "Pixel Motion",
           "description": "Generate motion from an image",
           "url": "https://pixelmotion.art"
+        },
+        {
+          "id": "wGAiWScQ1UWVTLEv7cboyJFqeyWDHG3RIHejbdDEs93fl0EZf5pvZNSNjvVlB9Ht",
+          "name": "Napkin",
+          "description": "Generate graphics from text",
+          "url": "https://napkin.ai"
         }
       ]
     },
     {
-      "name": "Engineering",
+      "name": "Engineering/Math",
       "links": [
         {
           "id": "A3pedCJAd18cXIWwMKv8cufAEoPrcfxIiS8XlsYxdNACd7PqpVjqmeV246sczIMc",
           "name": "Skill Lync",
           "description": "Find formulas and examples",
           "url": "https://resources.skill-lync.com"
+        },
+        {
+          "id": "DsFaIu9AhUTiV3vCTgS9svW3ROj9STbk9pbvMgWAoYOXOq0iTbVCnwRbFn8Ds0iu",
+          "name": "WolframAlpha",
+          "description": "Solve any math problem",
+          "url": "https://wolframalpha.com"
         }
       ]
     },
@@ -363,6 +375,12 @@
           "name": "Topo export",
           "description": "Export 2D and 3D maps from any place in the world",
           "url": "https://topoexport.com"
+        },
+        {
+          "id": "6esikwEKW2jV2o8RZumbCkaVdyVRLfSVSYtR9iuhNAczFIgPOj5KaevCAVZp8Tpi",
+          "name": "Taste Atlas",
+          "description": "Explore food from all around the world",
+          "url": "https://tasteatlas.com"
         }
       ]
     },
