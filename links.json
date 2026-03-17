@@ -419,6 +419,24 @@
           "name": "Babytrack",
           "description": "Add data analysis effect on a video",
           "url": "https://fx.collax.app/baby-track"
+        },
+        {
+          "id": "DLsaM6dR504eHPrItApsgpZPiqRAhLAub0C3zhrxuxVYrkN7h6r5hg7kLEJq26oB",
+          "name": "Color palette studio",
+          "description": "",
+          "url": "https://thecolorpalettestudio.com/?srsltid=AfmBOopoePz4dtG2R0T2EF2BHsi-pUKM_gU0LeIFriE85MBVIJRn8wz-"
+        },
+        {
+          "id": "W4dMkltuUZupDECPnG58ku07ic2bYF8Ahux5i4HbWF1yMZOAGGOOeWX22wh3fYcJ",
+          "name": "Fonts catalog",
+          "description": "",
+          "url": "https://www.freefaces.gallery/"
+        },
+        {
+          "id": "6rK8AZyX8B5mQJ8dzY5QUgviFZbg0tJQEHUzdiXstotAy4m7V4BBaqiQTXB2FiH3",
+          "name": "Color palette designer",
+          "description": "",
+          "url": "https://coolors.co/"
         }
       ]
     },
@@ -585,6 +603,12 @@
           "name": "HammyHome",
           "description": "Virtual hamster",
           "url": "https://hammyhome.com"
+        },
+        {
+          "id": "3Ptv8rA96kqgZnyJXqsprAmaYMfM6SuxGj2gKpnVb5xhAUKW3i1hOGNuPHGSIe6u",
+          "name": "Fantasy map creator",
+          "description": "",
+          "url": "https://inkarnate.com/?utm_source=ppc&utm_medium=google&utm_campaign=pmax&utm_content=ag1&gad_source=1&gad_campaignid=23657254218&gbraid=0AAAABBVMK8BMN_Q4cYSc6MF27XGYR8TCY&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-3T9KfQh0va9a54E-M_6uyv_bFEvzfyQ1mwk9pjbctLk9HM6acOM34aAtEIEALw_wcB"
         }
       ]
     },
@@ -607,6 +631,34 @@
           "name": "City Roads",
           "description": "Draw roads from a city",
           "url": "https://anvaka.github.io/city-roads"
+        }
+      ]
+    },
+    {
+      "name": "Work",
+      "links": [
+        {
+          "id": "OFNRSKbUWk7r7FiojEF824YStjX2862bOxWprRacNR7pgmn1D3QtPFyHCfEgYzFR",
+          "name": "Profil salarial",
+          "description": "",
+          "url": "https://entsendung.admin.ch/Lohnrechner/lohnberechnung"
+        }
+      ]
+    },
+    {
+      "name": "Ambiance",
+      "links": [
+        {
+          "id": "gBdrgtKwo21SAvWK4yjlpY4v15a84saLWsnmXzGn0LBPLwvabo3ql5SYZ8A4RlcH",
+          "name": "Animal crossing radio",
+          "description": "",
+          "url": "https://nook-radio.vercel.app/"
+        },
+        {
+          "id": "oDlFO6rE7G35mEi56S2pGkGsfT2tebz1yHIrTFTJji1te3jMg8MefMHb5FWumyGs",
+          "name": "Lofi background and sound",
+          "description": "",
+          "url": "https://lofi.co/"
         }
       ]
     }
