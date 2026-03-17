@@ -38,6 +38,12 @@
           "name": "Coddy",
           "description": "Learn programming and coding skills",
           "url": "https://coddy.tech"
+        },
+        {
+          "id": "JldSTeikb4Cu0zPHvAWtdp5cuHU72VPN1H7GfqesyqkEO1l3ya1LF3gZdIVvqRtP",
+          "name": "AnimeJS",
+          "description": "Javascript animation components",
+          "url": "https://animejs.com"
         }
       ]
     },
@@ -61,6 +67,12 @@
           "name": "Car Care Kiosk",
           "description": "Repair your car",
           "url": "https://carcarekiosk.com"
+        },
+        {
+          "id": "z9bfL04lKpzfUU8CnlgbJblKv2phmiwBy1fFzQIlC8AeVGa2XcxErq0qvmOcg8ck",
+          "name": "3D Tuning",
+          "description": "Customize cars from your browser",
+          "url": "https://3dtuning.com"
         }
       ]
     },
@@ -108,6 +120,12 @@
           "name": "Napkin",
           "description": "Generate graphics from text",
           "url": "https://napkin.ai"
+        },
+        {
+          "id": "Z1fA3H0mUbP0ERvWuCIo86KfI049541ofs0BnRBHrtRkn0rVLxlnCiwt70BhdhHl",
+          "name": "Content Core",
+          "description": "Get a 3D mockup from any image",
+          "url": "https://contentcore.xyz"
         }
       ]
     },
@@ -177,6 +195,24 @@
           "name": "Hero Forge",
           "description": "Customize 3D models for your character",
           "url": "https://heroforge.com"
+        },
+        {
+          "id": "PpzAGj4Fl1DtPgkjp5X7KfCloPE74piV4OkWZzuSlyfqqTcQ1A8JXY8xjJ0h6jaJ",
+          "name": "Pixel Beads",
+          "description": "Turn any image into a pixel beads pattern",
+          "url": "https://pixelbeads.pics"
+        },
+        {
+          "id": "EFSvAXzE0RvSwgzk6DLbHKL6PM332V0Ti3h9PmRtbxm0LoCgbFYSiXazUKIZ02Hy",
+          "name": "FreeSewing",
+          "description": "Get sewing patterns from your dimensions",
+          "url": "https://freesewing.eu"
+        },
+        {
+          "id": "Tdd1d5FpPb2l2LWP3ztfnrxdaZkFVsCKcbJ2QgKusliCg3KfZ2rkbvsPk05Unw4J",
+          "name": "DrCos",
+          "description": "Find any clothing sewing pattern",
+          "url": "https://dr-cos.info"
         }
       ]
     },
@@ -234,6 +270,24 @@
           "name": "Inkarnate",
           "description": "Creat customized maps for DnD or roleplay games",
           "url": "https://inkarnate.com"
+        },
+        {
+          "id": "4RbQmaNMOinncUmQwXBx9HPj1vpnVc19OQL1CS3jwBkJZSH8hVdP3XuQxgt37YTe",
+          "name": "Drifted",
+          "description": "Driving game",
+          "url": "https://drifted.com"
+        },
+        {
+          "id": "Bv5PBSyNB69DQfB8o7cqBpAsKpWfdLpbz0zCcAAWg6puVFeOvyM1hyyucCXQUDDs",
+          "name": "Watabou",
+          "description": "Map, city, dungeon generator for roleplay and DnD",
+          "url": "https://watabou.itch.io"
+        },
+        {
+          "id": "N9ML7ltd2I67rMhvnHJ3jDCyZlYd3Q9Ds9iRlz4sLwHZEKNxzJhXR5WmXiHxyL1k",
+          "name": "Fantasy Map Generator",
+          "description": "Generate roleplay and Dnd maps",
+          "url": "https://azgaar.github.io/Fantasy-Map-Generator"
         }
       ]
     },
@@ -311,6 +365,60 @@
           "name": "ASCII Art",
           "description": "Generate ASCII art from an image",
           "url": "https://asciiart.eu/image-to-ascii"
+        },
+        {
+          "id": "FTDnwpGLhM9uTy3ONSkUJK9dm62XNchKErWbLhmOuCA68DQjPAZPeWjGQ0ano4ew",
+          "name": "Spline",
+          "description": "3D page, animation, text, templates",
+          "url": "https://spline.design"
+        },
+        {
+          "id": "KLP8uxZyZ9HdQXb5yQLJT8Pjurmf7aRlTksLyhZ0cmqTyrJhswDCXMXp7CFvmjbr",
+          "name": "Heatmap desgin",
+          "description": "Turn any image into a heatmap design",
+          "url": "https://app.paper.design/playground/heatmap"
+        },
+        {
+          "id": "FgR1imHCDnxoQVygpgLp1mkzi8QSGYb9cH1BExxpny7ixt7uL24IMcJiBoB31w5l",
+          "name": "IKEA planner",
+          "description": "Design your home in 3D",
+          "url": "https://ikea.com/us/en/planners"
+        },
+        {
+          "id": "ddIooMTv2C8JCIZkGqAnaXrFAQJU2r8kkvLlYesm0L1DZQb3tWT5YUFgdIKbXcW4",
+          "name": "MoeWalls",
+          "description": "4K wallpapers",
+          "url": "https://moewalls.com"
+        },
+        {
+          "id": "FEYqTNo0Qy47MmINbJLUZzAdCPfgqWEvmO7xLNa9a92gqPQryKZaP90t7KQdSIGa",
+          "name": "Cursify",
+          "description": "Cursor animations",
+          "url": "https://cursify.ui-layouts.com"
+        },
+        {
+          "id": "jLr27mgJq2ayTHEAn52diuGwrsFjZK4SDpRvMyLR44NdfGLuvpjJeYid79tRDUuT",
+          "name": "Plan your room",
+          "description": "Create and design your room",
+          "url": "https://planyourroom.com"
+        },
+        {
+          "id": "yFKeRnjt2spWAeIAYTrpWkRQuQ7WgKiDlomG1Kc60olUm13KahSgyiy6swgtUIYp",
+          "name": "HomeByMe",
+          "description": "Design your home in 3D",
+          "url": "https://home.by.me"
+        },
+        {
+          "id": "5fFpeIqFNQXrTxlgQNTHmZKs6yzwh4vjF5zP5HTDXKu7eQ4oIXaMrvEx16LHIGGY",
+          "name": "Funes",
+          "description": "Get 3D models from buildings all around the world",
+          "url": "https://funes.world"
+        },
+        {
+          "id": "CJyJ2QP4qgh105ZOxnXPBS5vKqC9sdua4q8NGqNkLvYZRlkdmIaG52QZt4EHYD5Z",
+          "name": "Babytrack",
+          "description": "Add data analysis effect on a video",
+          "url": "https://fx.collax.app/baby-track"
         }
       ]
     },
@@ -358,6 +466,12 @@
           "name": "Language Guide",
           "description": "Learn a new language",
           "url": "https://languageguide.org"
+        },
+        {
+          "id": "OIqwVIRnhJwgx6Kz9653W59gPL3Ee3n7GA9FhqfL1liPMvEmoPNp1tLrOKFeekWB",
+          "name": "Paper2Galgame",
+          "description": "Turn any content, or paper into an interactive dialogue game",
+          "url": "https://paper2gal.top"
         }
       ]
     },
@@ -465,6 +579,12 @@
           "name": "Form Follows Function",
           "description": "Cure boredom with interactive pages",
           "url": "https://fff.cmiscm.com"
+        },
+        {
+          "id": "ZZ3rVvjZmkWnnM0Y7e1xPHssBWfecjkOaMrN4T7ywg5o8UpV4IWYQfPz98lLSBUV",
+          "name": "HammyHome",
+          "description": "Virtual hamster",
+          "url": "https://hammyhome.com"
         }
       ]
     },
@@ -476,6 +596,17 @@
           "name": "Convertio",
           "description": "Convert any file format",
           "url": "https://convertio.co"
+        }
+      ]
+    },
+    {
+      "name": "Geography",
+      "links": [
+        {
+          "id": "uYojY96kZdc2zd8YFqLAOCrDV0CH6RGyLTFErO1LQiHcUYPzXJGvQP1Fh8fmCuCC",
+          "name": "City Roads",
+          "description": "Draw roads from a city",
+          "url": "https://anvaka.github.io/city-roads"
         }
       ]
     }
