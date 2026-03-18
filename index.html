@@ -10,16 +10,22 @@
 <body class="container mt-4">
 	<div class="d-flex justify-content-between">
 		<h1>Lniks Catalogue</h1>
-
+		<button id="sortToggle" class="btn btn-outline-secondary ms-2">
+		Sort A–Z
+		</button>
 		<button id="toggleAll" class="btn btn-sm btn-outline-secondary mb-3">
 		Collapse All
 		</button>
-		<a href="admin.html" class="btn btn-sm btn-outline-secondary">
+		<a href="admin.html" class="btn btn-dark">
 		Admin
 		</a>
 	</div>
 
-	<input id="search" class="form-control my-3" placeholder="Search links" >
+	<div class="position-relative">
+		<input id="search" class="form-control pe-5" placeholder="Search...">
+		<span id="clearSearch" class="search-clear">×</span>
+	</div>
+	<!--<input id="search" class="form-control my-3" placeholder="Search links" >-->
 	<div id="themes"></div>
 
 	<script src="script.js"></script>
