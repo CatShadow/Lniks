@@ -59,3 +59,18 @@
   padding:0 2px;
   border-radius:3px;
 }
+
+.search-clear{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  font-size:18px;
+  color:#888;
+  display:none;
+}
+
+.search-clear:hover{
+  color:#000;
+}
