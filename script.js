@@ -4,6 +4,7 @@ let data = null
 let jsonSha = null
 let expanded = true
 let show_more = false
+let alphabeticalSort = false
 
 document.addEventListener("DOMContentLoaded", () => {
     init()
@@ -14,6 +15,7 @@ async function init() {
     renderCatalogue()
     renderAdmin()
     setupForm()
+    setupSortButton()
     setupSaveButton()
     setupExpandAll()
 }
@@ -97,7 +99,15 @@ function renderCatalogue(){
     container.innerHTML = ""
     container.className="row"
     
-    data.themes.forEach(theme=>{
+    let themes = data.themes
+
+    if(alphabeticalSort){
+        themes = data.themes.slice().sort(function(a,b){
+            return a.name.localeCompare(b.name, undefined, {sensitivity:'base'})
+        })
+    }
+
+    themes.forEach(theme=>{
         const col = document.createElement("div")
         col.className = "col-lg-4 col-md-6 col-12 mb-4"
         
@@ -115,7 +125,15 @@ function renderCatalogue(){
         //list.className = "theme-links"
         list.className = "theme-links open"
         
-        theme.links.forEach((link,i)=>{
+        let links = theme.links
+
+        if(alphabeticalSort){
+            links = theme.links.slice().sort(function(a,b){
+                return (a.name || "").localeCompare(b.name || "", undefined, {sensitivity:'base'})
+            })
+        }
+
+        links.forEach((link,i)=>{
             const el = document.createElement("div")
 
             el.className="link"
@@ -171,7 +189,7 @@ function renderCatalogue(){
 /* --------------------------
 SEARCH
 -------------------------- */
-function initSearch(){
+/*function initSearch(){
     const input = document.getElementById("search")
     if(!input) return
 
@@ -193,6 +211,59 @@ function initSearch(){
             }
 
         })
+    }
+}*/
+function initSearch(){
+    const input = document.getElementById("search")
+    const clearBtn = document.getElementById("clearSearch")
+
+    if(!input) return
+
+    input.oninput = () => {
+        const q = input.value.toLowerCase()
+
+        // show/hide X button
+        if(clearBtn){
+            clearBtn.style.display = q ? "block" : "none"
+        }
+
+        document.querySelectorAll(".link").forEach(link=>{
+            const name = link.dataset.name || ""
+            const desc = link.dataset.desc || ""
+            const url = link.dataset.url || ""
+
+            const combined = (name + " " + desc + " " + url).toLowerCase()
+            const anchor = link.querySelector("a")
+
+            if(combined.includes(q)){
+                link.style.display="flex"
+                anchor.innerHTML = highlightText(name,q)
+            }else{
+                link.style.display="none"
+            }
+        })
+    }
+
+    if(clearBtn){
+        clearBtn.onclick = ()=>{
+            input.value = ""
+            input.dispatchEvent(new Event("input"))
+        }
+    }
+}
+
+/* --------------------------
+SORT
+-------------------------- */
+function setupSortButton(){
+    const btn = document.getElementById("sortToggle")
+    if(!btn) return
+
+    btn.onclick = ()=>{
+        alphabeticalSort = !alphabeticalSort
+
+        btn.textContent = alphabeticalSort ? "☑ Sort A–Z" : "☐ Sort A–Z"
+        renderCatalogue()
     }
 }
 
