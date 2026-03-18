@@ -191,30 +191,6 @@ SEARCH
 -------------------------- */
 /*function initSearch(){
     const input = document.getElementById("search")
-    if(!input) return
-
-    input.oninput = () => {
-        const q = input.value.toLowerCase()
-        document.querySelectorAll(".link").forEach(link=>{
-            const name = link.dataset.name || ""
-            const desc = link.dataset.desc || ""
-            const url = link.dataset.url || ""
-
-            const combined = (name + " " + desc + " " + url).toLowerCase()
-            const anchor = link.querySelector("a")
-
-            if(combined.includes(q)){
-                link.style.display="flex"
-                anchor.innerHTML = highlightText(name,q)
-            }else{
-                link.style.display="none"
-            }
-
-        })
-    }
-}*/
-function initSearch(){
-    const input = document.getElementById("search")
     const clearBtn = document.getElementById("clearSearch")
 
     if(!input) return
@@ -240,6 +216,72 @@ function initSearch(){
                 anchor.innerHTML = highlightText(name,q)
             }else{
                 link.style.display="none"
+            }
+        })
+    }
+
+    if(clearBtn){
+        clearBtn.onclick = ()=>{
+            input.value = ""
+            input.dispatchEvent(new Event("input"))
+        }
+    }
+}*/
+function initSearch(){
+    const input = document.getElementById("search")
+    const clearBtn = document.getElementById("clearSearch")
+
+    if(!input) return
+
+    input.oninput = () => {
+        const q = input.value.toLowerCase()
+
+        // show/hide clear button
+        if(clearBtn){
+            clearBtn.style.display = q ? "block" : "none"
+        }
+
+        document.querySelectorAll("#themes .card").forEach(card=>{
+            const links = card.querySelectorAll(".link")
+            const list = card.querySelector(".theme-links")
+
+            let hasMatch = false
+
+            links.forEach(link=>{
+                const name = link.dataset.name || ""
+                const desc = link.dataset.desc || ""
+                const url = link.dataset.url || ""
+
+                const combined = (name + " " + desc + " " + url).toLowerCase()
+                const anchor = link.querySelector("a")
+
+                if(combined.includes(q)){
+                    link.style.display = "flex"
+                    anchor.innerHTML = highlightText(name, q)
+                    hasMatch = true
+                }else{
+                    link.style.display = "none"
+                }
+            })
+
+            // 🔥 hide or show entire theme
+            if(q){
+                card.style.display = hasMatch ? "" : "none"
+
+                // 🔥 auto-expand if matches
+                if(hasMatch){
+                    list.classList.add("open")
+                }
+            }else{
+                // reset everything when search cleared (can delete the 2nd line to keep them open)
+                card.style.display = ""
+                list.classList.remove("open")
+
+                links.forEach(link=>{
+                    link.style.display = "flex"
+                    const name = link.dataset.name || ""
+                    link.querySelector("a").innerHTML = name
+                })
             }
         })
     }
