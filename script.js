@@ -4,7 +4,7 @@ let data = null
 let jsonSha = null
 let expanded = true
 let show_more = false
-let alphabeticalSort = false
+let alphabeticalSort = true
 
 document.addEventListener("DOMContentLoaded", () => {
     init()
@@ -275,7 +275,7 @@ function initSearch(){
             }else{
                 // reset everything when search cleared (can delete the 2nd line to keep them open)
                 card.style.display = ""
-                list.classList.remove("open")
+                //list.classList.remove("open")
 
                 links.forEach(link=>{
                     link.style.display = "flex"
